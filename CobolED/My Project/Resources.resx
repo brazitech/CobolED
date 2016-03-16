@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Edit_Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Edit_Copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CobolED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\CobolED.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_FindPrev" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_FindPrev.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File_Print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_Print.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit_Redo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Edit_Redo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_ClearBookMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_ClearBookMark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit_Undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Edit_Undo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_019_E" xml:space="preserve">
+    <value>Input line number is not a number . | E</value>
+    <comment>Jump dialogue , if the input line number is not a number</comment>
+  </data>
+  <data name="CED002_001_I" xml:space="preserve">
+    <value>Configuration file : for { 0 } can not be opened , and then use the default settings . | I</value>
+    <comment>If the configuration file can not be found</comment>
+  </data>
+  <data name="CobolED80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\About\CobolED80.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Setting_Option" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Setting_Option.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SplashTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\SplashScreen\SplashTitle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_Find.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit_CommentOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Edit_CommentOut.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Window_CloseWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Window_CloseWindow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_012_E" xml:space="preserve">
+    <value>File name you entered already exists . | E</value>
+    <comment>In the template selection dialogue , if the file name that you entered is present</comment>
+  </data>
+  <data name="File_OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File_OpenProject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_OpenProject.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_010_E" xml:space="preserve">
+    <value>Please enter a file name . | E</value>
+    <comment>In the template selection dialog , in the case of a file name not entered</comment>
+  </data>
+  <data name="CED002_017_Q" xml:space="preserve">
+    <value>{ 0 } Do you want to save the file ? | Q</value>
+    <comment>In the case of closing the file</comment>
+  </data>
+  <data name="File_PrintPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_PrintPreview.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit_Paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Edit_Paste.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_GoToDefine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_GoToDefine.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_FindNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_SetBookMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_SetBookMark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File_PageSetup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_PageSetup.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_018_E" xml:space="preserve">
+    <value>Because the file does not exist , you can not reload . | E</value>
+    <comment>To modify the open file , when the file is closed , press the Kiang cell button , if the original file does not exist</comment>
+  </data>
+  <data name="File_SaveAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_SaveAll.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit_Cut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Edit_Cut.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComponentFileName" xml:space="preserve">
+    <value>CobolEDComponentDefines.xml</value>
+    <comment>Component definition file name</comment>
+  </data>
+  <data name="CED002_008_E" xml:space="preserve">
+    <value>Please enter the project path . | E</value>
+    <comment>The project in the new dialogue , in the case of a project path not entered</comment>
+  </data>
+  <data name="Search_NextBookMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_NextBookMark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_011_E" xml:space="preserve">
+    <value>Please select a template . | E</value>
+    <comment>In the template selection dialog , in the case of a template not selected</comment>
+  </data>
+  <data name="CED002_007_E" xml:space="preserve">
+    <value>Please enter a project name . | E</value>
+    <comment>The project in the new dialogue , in the case of a project name not entered</comment>
+  </data>
+  <data name="CED002_006_E" xml:space="preserve">
+    <value>When writing the information to the configuration file , an error has occurred . ({0}) | E</value>
+    <comment>When you write the configuration information to a file , if an error occurs</comment>
+  </data>
+  <data name="Help_Technology" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Help_Technology.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_003_C" xml:space="preserve">
+    <value>When you establish the analyzer , an error has occurred . ({0}) | C</value>
+    <comment>If an error occurs when reading the definition of the analyzer</comment>
+  </data>
+  <data name="CED002_002_C" xml:space="preserve">
+    <value>Component definition file : for { 0 } does not exist , it can not be started . | C</value>
+    <comment>If you can not find the parts definition file</comment>
+  </data>
+  <data name="Search_PrevBookMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_PrevBookMark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_016_E" xml:space="preserve">
+    <value>Specified file : { 0 } can not be opened . | E</value>
+    <comment>When you open a file , if an error occurs</comment>
+  </data>
+  <data name="SettingFileName" xml:space="preserve">
+    <value>CobolEDSettingDefines.xml</value>
+    <comment>Configuration file name</comment>
+  </data>
+  <data name="Window_RevertWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Window_RevertWindow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_015_E" xml:space="preserve">
+    <value>When you save the project information , an error has occurred . ({0}) | E</value>
+    <comment>When you save the project information , if an error occurs</comment>
+  </data>
+  <data name="Search_UnGoTo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_UnGoTo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File_NewProject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_NewProject.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_005_C" xml:space="preserve">
+    <value>When you establish a search engine , an error has occurred . ({0}) | C</value>
+    <comment>If an error occurs when reading the definition of a search engine</comment>
+  </data>
+  <data name="Edit_CommentCancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Edit_CommentCancel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_020_I" xml:space="preserve">
+    <value>Specified string is not found . | I</value>
+    <comment>In the search dialog , if you can not find the specified string</comment>
+  </data>
+  <data name="Help_GPL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Help_GPL.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_004_C" xml:space="preserve">
+    <value>When establishing the editor , error has occurred . ({0}) | C</value>
+    <comment>If an error occurs when reading the definition of editor</comment>
+  </data>
+  <data name="CED002_009_E" xml:space="preserve">
+    <value>Project path you entered does not exist . | E</value>
+    <comment>The project in the new dialogue , if the project path that you entered does not exist</comment>
+  </data>
+  <data name="File_Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\File_Save.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Background.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_014_E" xml:space="preserve">
+    <value>File name you entered already exists . | E</value>
+    <comment>When you open the project file , if an error occurs</comment>
+  </data>
+  <data name="Search_Replace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_Replace.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CED002_013_C" xml:space="preserve">
+    <value>File name you entered already exists . | E</value>
+    <comment>File Add dialogue , if you do not put read the template</comment>
+  </data>
+  <data name="Search_ReGoTo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Search_ReGoTo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help_History" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Menu\Help_History.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

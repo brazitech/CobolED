@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F2D6F63-21A0-4E91-A4A0-54A4A89EF857}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CobolEDCore</RootNamespace>
+    <AssemblyName>CobolEDCore</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CobolEDCore.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CobolEDCore.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyzerBase\LexBase.vb" />
+    <Compile Include="Infos\Analyzer\CaseInfo.vb" />
+    <Compile Include="Infos\Analyzer\DFAInfo.vb" />
+    <Compile Include="Infos\Analyzer\PredictiveParsingTableInfo.vb" />
+    <Compile Include="AnalyzerBase\SyntaxBase.vb" />
+    <Compile Include="Attributes\ItemNameAttribute.vb" />
+    <Compile Include="Attributes\ShowInDescriptionAtrribute.vb" />
+    <Compile Include="Attributes\ShowInItemAttribute.vb" />
+    <Compile Include="Document\DocumentLine.vb" />
+    <Compile Include="Enums\CaretStatusEnum.vb" />
+    <Compile Include="Enums\CodeCompletionListTypeEnum.vb" />
+    <Compile Include="Enums\DocumentChangeTypeEnum.vb" />
+    <Compile Include="Enums\WordTypeEnum.vb" />
+    <Compile Include="EventArgs\CaretPositionChangedEventArgs.vb" />
+    <Compile Include="EventArgs\CaretPositionGoToEventArgs.vb" />
+    <Compile Include="EventArgs\CaretStatusChangedEventArgs.vb" />
+    <Compile Include="EventArgs\DocumentChangedEventArgs.vb" />
+    <Compile Include="EventArgs\DocumentDirtyEventArgs.vb" />
+    <Compile Include="EventArgs\NeedUpdateMemberEventArgs.vb" />
+    <Compile Include="EventArgs\MouseStopAtWordEventArgs.vb" />
+    <Compile Include="Infos\Analyzer\ProductionInfo.vb" />
+    <Compile Include="Infos\Analyzer\StatusInfo.vb" />
+    <Compile Include="Infos\Analyzer\SymbolInfo.vb" />
+    <Compile Include="Infos\Document\EditActionInfo.vb" />
+    <Compile Include="Infos\Editor\CaretPositionInfo.vb" />
+    <Compile Include="Infos\Menu\DynamicMenuItemInfo.vb" />
+    <Compile Include="Infos\SearchEngine\FindResultInfo.vb" />
+    <Compile Include="Infos\Analyzer\IncludeInfo.vb" />
+    <Compile Include="Infos\Analyzer\SentenceInfo.vb" />
+    <Compile Include="Infos\Setting\SettingInfo.vb" />
+    <Compile Include="Infos\Analyzer\WordInfo.vb" />
+    <Compile Include="Interfaces\Editor\ICobolEDEditor.vb" />
+    <Compile Include="Interfaces\SearchEngine\ICobolEDSearchEngine.vb" />
+    <Compile Include="Interfaces\Menu\IMenuItemProcess.vb" />
+    <Compile Include="Interfaces\Info\IMoveable.vb" />
+    <Compile Include="Interfaces\Analyzer\ICobolEDAnalyzer.vb" />
+    <Compile Include="Interfaces\Analyzer\ICobolEDEditAssistant.vb" />
+    <Compile Include="Interfaces\Analyzer\ICobolEDLex.vb" />
+    <Compile Include="Interfaces\Analyzer\ICobolEDSyntax.vb" />
+    <Compile Include="Interfaces\View\INeedUpdateMember.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Infos\Analyzer\ProgramInfo.vb" />
+    <Compile Include="Infos\Analyzer\ProjectInfo.vb" />
+    <Compile Include="Infos\Analyzer\FunctionInfo.vb" />
+    <Compile Include="Infos\Analyzer\VariableInfo.vb" />
+    <Compile Include="Document\Document.vb" />
+    <Compile Include="Document\Position.vb" />
+    <Compile Include="Document\Selection.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Project>{FE141FA4-76C1-4847-84A7-363F89E30E71}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

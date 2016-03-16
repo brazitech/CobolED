@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FDD8DA31-158B-4B4B-97A3-74E55A347BC9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CobolED.My.MyApplication</StartupObject>
+    <RootNamespace>CobolED</RootNamespace>
+    <AssemblyName>CobolED</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>CobolED.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CobolED.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CobolED.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Dialogues\MyPrintDialog.vb" />
+    <Compile Include="Dialogues\MyPageSetupDialog.vb" />
+    <Compile Include="Dialogues\MyPrintPreviewDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Managers\PrintManagerSingleton.vb" />
+    <Compile Include="Menu\File\OnPageSetup.vb" />
+    <Compile Include="Menu\File\OnPrint.vb" />
+    <Compile Include="Menu\File\OnPrintPreview.vb" />
+    <Compile Include="Menu\Help\OnGPL.vb" />
+    <Compile Include="Menu\Help\OnGPLNative.vb" />
+    <Compile Include="Menu\Help\OnHistory.vb" />
+    <Compile Include="Menu\Help\OnTechnology.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="Startup.vb" />
+    <Compile Include="Dialogues\FileExtensionDialog.Designer.vb">
+      <DependentUpon>FileExtensionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\FileExtensionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\JumpDialog.Designer.vb">
+      <DependentUpon>JumpDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\JumpDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\NewFileWizardDialog.Designer.vb">
+      <DependentUpon>NewFileWizardDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\NewFileWizardDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\MyOpenFileDialog.vb" />
+    <Compile Include="Dialogues\AddExistingFileDialog.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dialogues\MySaveAsDialog.vb" />
+    <Compile Include="Dialogues\SelectTemplateDialog.Designer.vb">
+      <DependentUpon>SelectTemplateDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\SelectTemplateDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\FindDialog.Designer.vb">
+      <DependentUpon>FindDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\FindDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\MyOpenProjectDialog.vb" />
+    <Compile Include="Dialogues\NewProjectDialog.Designer.vb">
+      <DependentUpon>NewProjectDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\NewProjectDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\OptionDialog.Designer.vb">
+      <DependentUpon>OptionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\OptionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.vb">
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentForm.Designer.vb">
+      <DependentUpon>DocumentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreenForm.Designer.vb">
+      <DependentUpon>SplashScreenForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreenForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CobolEDMainForm.Designer.vb">
+      <DependentUpon>CobolEDMainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CobolEDMainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Managers\AnalyzerManagerSingleton.vb" />
+    <Compile Include="Managers\DocumentFormManagerSingleton.vb" />
+    <Compile Include="Managers\DocumentManagerSinleton.vb" />
+    <Compile Include="Managers\EditorManagerSingleton.vb" />
+    <Compile Include="Managers\Manager.vb" />
+    <Compile Include="Managers\MemberManagerSingleton.vb" />
+    <Compile Include="Managers\MenuManagerSingleton.vb" />
+    <Compile Include="Managers\ProjectManagerSingleton.vb" />
+    <Compile Include="Managers\SearchManagerSingleton.vb" />
+    <Compile Include="Managers\SettingManagerSingleton.vb" />
+    <Compile Include="Managers\ToolBarManagerSingleton.vb" />
+    <Compile Include="Menu\Edit\OnCommentCancel.vb" />
+    <Compile Include="Menu\Edit\OnCommentOut.vb" />
+    <Compile Include="Menu\Edit\OnCopy.vb" />
+    <Compile Include="Menu\Edit\OnCut.vb" />
+    <Compile Include="Menu\Edit\OnPaste.vb" />
+    <Compile Include="Menu\Edit\OnRedo.vb" />
+    <Compile Include="Menu\Edit\OnSelectAll.vb" />
+    <Compile Include="Menu\Edit\OnUndo.vb" />
+    <Compile Include="Menu\File\OnCloseFile.vb" />
+    <Compile Include="Menu\File\OnCloseProject.vb" />
+    <Compile Include="Menu\File\OnExit.vb" />
+    <Compile Include="Menu\File\OnNewProject.vb" />
+    <Compile Include="Menu\File\OnOpenFile.vb" />
+    <Compile Include="Menu\File\OnOpenProject.vb" />
+    <Compile Include="Menu\File\OnRecentFiles.vb" />
+    <Compile Include="Menu\File\OnRecentFileSubItem.vb" />
+    <Compile Include="Menu\File\OnRecentProjects.vb" />
+    <Compile Include="Menu\File\OnRecentProjectSubItem.vb" />
+    <Compile Include="Menu\File\OnSaveAll.vb" />
+    <Compile Include="Menu\File\OnSaveAs.vb" />
+    <Compile Include="Menu\File\OnSave.vb" />
+    <Compile Include="Menu\Help\OnAbout.vb" />
+    <Compile Include="Menu\MenuItemProcessBase.vb" />
+    <Compile Include="Menu\Project\OnAddExistingFile.vb" />
+    <Compile Include="Menu\Project\OnAddNewFile.vb" />
+    <Compile Include="Menu\Project\OnDeleteFile.vb" />
+    <Compile Include="Menu\Search\OnClearBookMark.vb" />
+    <Compile Include="Menu\Search\OnReGoTo.vb" />
+    <Compile Include="Menu\Search\OnUnGoTo.vb" />
+    <Compile Include="Menu\Search\OnGoToDefine.vb" />
+    <Compile Include="Menu\Search\OnJump.vb" />
+    <Compile Include="Menu\Search\OnNextBookMark.vb" />
+    <Compile Include="Menu\Search\OnNextFind.vb" />
+    <Compile Include="Menu\Search\OnPrevBookMark.vb" />
+    <Compile Include="Menu\Search\OnPrevFind.vb" />
+    <Compile Include="Menu\Search\OnReplace.vb" />
+    <Compile Include="Menu\Search\OnFind.vb" />
+    <Compile Include="Menu\Search\OnSetBookMark.vb" />
+    <Compile Include="Menu\Setting\OnOption.vb" />
+    <Compile Include="Menu\Window\OnCloseWindow.vb" />
+    <Compile Include="Menu\Window\OnHorizontalWindow.vb" />
+    <Compile Include="Menu\Window\OnMinimizeWindow.vb" />
+    <Compile Include="Menu\Window\OnNextWindow.vb" />
+    <Compile Include="Menu\Window\OnPrevWindow.vb" />
+    <Compile Include="Menu\Window\OnRevertWindow.vb" />
+    <Compile Include="Menu\Window\OnVerticalWindow.vb" />
+    <Compile Include="Menu\Window\OnWindowList.vb" />
+    <Compile Include="Menu\Window\OnWindowListSubItem.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\ColorComboBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ColorComboBoxItem.vb" />
+    <Compile Include="UserControls\AnalyzerComboBox.Designer.vb">
+      <DependentUpon>AnalyzerComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnalyzerComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\FindResultView.Designer.vb">
+      <DependentUpon>FindResultView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FindResultView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OptionColorView.Designer.vb">
+      <DependentUpon>OptionColorView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionColorView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OptionFileExtensionsView.Designer.vb">
+      <DependentUpon>OptionFileExtensionsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionFileExtensionsView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OptionGeneralView.Designer.vb">
+      <DependentUpon>OptionGeneralView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionGeneralView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\OptionViewBase.Designer.vb">
+      <DependentUpon>OptionViewBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionViewBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProjectTreeView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ProjectView.Designer.vb">
+      <DependentUpon>ProjectView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogues\FileExtensionDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FileExtensionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\JumpDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>JumpDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\MyPrintPreviewDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MyPrintPreviewDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\NewFileWizardDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewFileWizardDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\SelectTemplateDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectTemplateDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\FindDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FindDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\OptionDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentForm.resx">
+      <DependentUpon>DocumentForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\NewProjectDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewProjectDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreenForm.resx">
+      <DependentUpon>SplashScreenForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CobolEDMainForm.resx">
+      <DependentUpon>CobolEDMainForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalyzerComboBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AnalyzerComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FindResultView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FindResultView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionColorView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionColorView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionFileExtensionsView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionFileExtensionsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionGeneralView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionGeneralView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionViewBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionViewBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProjectView.resx">
+      <DependentUpon>ProjectView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Project>{FE141FA4-76C1-4847-84A7-363F89E30E71}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobolEDCore\CobolEDCore.vbproj">
+      <Project>{2F2D6F63-21A0-4E91-A4A0-54A4A89EF857}</Project>
+      <Name>CobolEDCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Edit_Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Edit_Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Edit_Cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Edit_Paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Edit_Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_FindNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_Find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\File_SaveAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\File_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\File_NewProject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\File_OpenFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\File_OpenProject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\File_Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_ClearBookMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_NextBookMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_PrevBookMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_SetBookMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_GoToDefine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Setting_Option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Window_RevertWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Window_CloseWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_FindPrev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Edit_CommentOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Edit_CommentCancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_Replace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Menu\Search_ReGoTo.png" />
+    <None Include="images\Menu\Search_UnGoTo.png" />
+    <None Include="images\About\CobolED80.png" />
+    <None Include="images\Background.png" />
+    <None Include="images\SplashScreen\SplashTitle.png" />
+    <None Include="images\Menu\File_PageSetup.png" />
+    <None Include="images\Menu\File_PrintPreview.png" />
+    <None Include="images\CobolED.ico" />
+    <None Include="images\Menu\Help_Technology.png" />
+    <None Include="images\Menu\Help_GPL.png" />
+    <None Include="images\Menu\Help_History.png" />
+    <Content Include="CobolED.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
