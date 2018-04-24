@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Common", "Common\Common.vbproj", "{FE141FA4-76C1-4847-84A7-363F89E30E71}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CobolED", "CobolED\CobolED.vbproj", "{FDD8DA31-158B-4B4B-97A3-74E55A347BC9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BDDE1010-7FE7-4605-ABDA-7387FDCEC875} = {BDDE1010-7FE7-4605-ABDA-7387FDCEC875}
-		{1E1C882E-1495-4E20-A6CF-950CCE2A5976} = {1E1C882E-1495-4E20-A6CF-950CCE2A5976}
-		{D39BB3DA-61DF-4FAC-8635-87D361B6EF57} = {D39BB3DA-61DF-4FAC-8635-87D361B6EF57}
-	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CobolEDCore", "CobolEDCore\CobolEDCore.vbproj", "{2F2D6F63-21A0-4E91-A4A0-54A4A89EF857}"
 EndProject
