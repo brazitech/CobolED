@@ -28,7 +28,7 @@ Imports CobolED.Managers.Manager
 Namespace Dialogues
     Public Class MySaveAsDialog
 
-        Private Const DLG_TITLE As String = "Save as"
+        Private Const DlgTitle As String = "Save as"
 
         Private _saveAsDialog As SaveFileDialog
 
@@ -36,7 +36,7 @@ Namespace Dialogues
             _saveAsDialog = New SaveFileDialog
             _saveAsDialog.CheckPathExists = True
             _saveAsDialog.RestoreDirectory = True                        
-            _saveAsDialog.Title = DLG_TITLE
+            _saveAsDialog.Title = DlgTitle
         End Sub
 
         Public ReadOnly Property FileName() As String

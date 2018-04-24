@@ -34,13 +34,13 @@ Namespace Managers
 
     Public Class EditorManagerSingleton
 
-        Private Const XML_EDITORDEFINE_PATH As String = "CobolEDComponentDefines/CobolEDEditorDefine"
-        Private Const XML_CLASSNAME_ATTRIBUTE As String = "ClassName"
-        Private Const XML_FILENAME_ATTRIBUTE As String = "FileName"
+        Private Const XmlEditordefinePath As String = "CobolEDComponentDefines/CobolEDEditorDefine"
+        Private Const XmlClassnameAttribute As String = "ClassName"
+        Private Const XmlFilenameAttribute As String = "FileName"
 
         Private Shared _editorManager As EditorManagerSingleton
 
-        Private _cobolEDEditorType As Type
+        Private _cobolEdEditorType As Type
 
         Private Sub New()
         End Sub
@@ -59,9 +59,9 @@ Namespace Managers
             Dim editorClassName As String
             Dim editorFileName As String
             Try
-                editorDefineNode = xmlDoc.SelectSingleNode(XML_EDITORDEFINE_PATH)
-                editorClassName = editorDefineNode.Attributes(XML_CLASSNAME_ATTRIBUTE).Value
-                editorFileName = IO.Path.Combine(Application.StartupPath, editorDefineNode.Attributes(XML_FILENAME_ATTRIBUTE).Value)
+                editorDefineNode = xmlDoc.SelectSingleNode(XmlEditordefinePath)
+                editorClassName = editorDefineNode.Attributes(XmlClassnameAttribute).Value
+                editorFileName = IO.Path.Combine(Application.StartupPath, editorDefineNode.Attributes(XmlFilenameAttribute).Value)
                 _cobolEDEditorType = Assembly.LoadFile(editorFileName).GetType(editorClassName)
             Catch ex As Exception
                 Throw New MyException(My.Resources.CED002_004_C, ex.Message)
@@ -69,8 +69,8 @@ Namespace Managers
 
         End Sub
 
-        Public Function CobolEDEditorFactory(ByVal document As Document, ByVal cobolEDAnalyzer As ICobolEDAnalyzer) As ICobolEDEditor
-            Dim cobolEDEditor As ICobolEDEditor
+        Public Function CobolEdEditorFactory(ByVal document As Document, ByVal cobolEdAnalyzer As ICobolEDAnalyzer) As ICobolEDEditor
+            Dim cobolEdEditor As ICobolEDEditor
             If _cobolEDEditorType IsNot Nothing Then
                 cobolEDEditor = Activator.CreateInstance(_cobolEDEditorType)
                 cobolEDEditor.Font = New System.Drawing.Font("ＭＳ Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))

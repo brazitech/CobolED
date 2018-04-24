@@ -27,17 +27,17 @@ Namespace Dialogues
     Public Class MyOpenProjectDialog
         Private _openProjectDialog As OpenFileDialog
 
-        Private Const DLG_TITLE As String = "Open Project"
-        Private Const DLG_FILTER As String = "CobolED Project file(*.ced)|*.ced|All files(*.*)|*.*"
+        Private Const DlgTitle As String = "Open Project"
+        Private Const DlgFilter As String = "CobolED Project file(*.ced)|*.ced|All files(*.*)|*.*"
 
         Public Sub New()
             _openProjectDialog = New OpenFileDialog
             _openProjectDialog.CheckFileExists = True
             _openProjectDialog.CheckPathExists = True
             _openProjectDialog.RestoreDirectory = True
-            _openProjectDialog.Filter = DLG_FILTER
+            _openProjectDialog.Filter = DlgFilter
             _openProjectDialog.Multiselect = False
-            _openProjectDialog.Title = DLG_TITLE
+            _openProjectDialog.Title = DlgTitle
 
         End Sub
 

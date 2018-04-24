@@ -33,13 +33,13 @@ Imports CobolEDCore.Infos.Analyzer
 Namespace Dialogues
     Public Class FindDialog
 
-        Private Const TITLE_FIND As String = "Search"
-        Private Const TITLE_REPLACE As String = "Replace"
+        Private Const TitleFind As String = "Search"
+        Private Const TitleReplace As String = "Replace"
         Private _blnIsFind As Boolean        
         Private _intReplacePnlHeight As Integer
-        Private _cobolEDMainForm As CobolEDMainForm
+        Private _cobolEdMainForm As CobolEDMainForm
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
 
             ' This call is required by the Windows Form Designer .
             InitializeComponent()
@@ -65,7 +65,7 @@ Namespace Dialogues
                         Me.Height -= _intReplacePnlHeight
                         Me._btnReplaceAll.Visible = False
                         Me._btnFindAll.Visible = True
-                        Me.Text = TITLE_FIND
+                        Me.Text = TitleFind
                     End If
                 Else
                     If Me._pnlReplace.Height = 0 Then
@@ -74,7 +74,7 @@ Namespace Dialogues
                         Me.Height += _intReplacePnlHeight
                         Me._btnReplaceAll.Visible = True
                         Me._btnFindAll.Visible = False
-                        Me.Text = TITLE_REPLACE
+                        Me.Text = TitleReplace
                     End If
                 End If
             End Set

@@ -30,16 +30,16 @@ Namespace Menu.Setting
         Inherits MenuItemProcessBase
 
         Private _optionDialog As OptionDialog
-        Private Const STR_COMMENT As String = "CobolED Change the editor options"
+        Private Const StrComment As String = "CobolED Change the editor options"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _optionDialog = New OptionDialog
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

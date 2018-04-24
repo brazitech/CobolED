@@ -32,24 +32,24 @@ Namespace Menu.File
         Inherits MenuItemProcessBase
 
         Private _openFileDialog As MyOpenFileDialog
-        Private Const STR_COMMENT As String = "Opening a File that is saved"
+        Private Const StrComment As String = "Opening a File that is saved"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _openFileDialog = New MyOpenFileDialog
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 
         Public Overrides Sub Execute()
             Dim documentFileName As String
             Dim documentFileExtension As String
-            Dim cobolEDAnalyzerName As String
-            Dim cobolEDAnalyzer As ICobolEDAnalyzer
+            Dim cobolEdAnalyzerName As String
+            Dim cobolEdAnalyzer As ICobolEDAnalyzer
 
             If _openFileDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
                 documentFileName = _openFileDialog.FileName
@@ -64,7 +64,7 @@ Namespace Menu.File
             End If
         End Sub
 
-        Private Sub OpenFile(ByVal fileName As String, ByVal cobolEDAnalyzer As ICobolEDAnalyzer)
+        Private Sub OpenFile(ByVal fileName As String, ByVal cobolEdAnalyzer As ICobolEDAnalyzer)
             DocumentManager.AddDocument(fileName)
             DocumentFormManager.AddDocumentForm(DocumentManager.Documents(fileName), cobolEDAnalyzer)
             DocumentFormManager.ActivateDocumentForm(fileName, FormWindowState.Maximized)

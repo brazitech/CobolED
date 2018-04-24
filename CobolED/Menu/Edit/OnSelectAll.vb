@@ -29,15 +29,15 @@ Namespace Menu.Edit
     Public Class OnSelectAll
         Inherits MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "Select the entire File"
+        Private Const StrComment As String = "Select the entire File"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

@@ -36,16 +36,16 @@ Imports Common
 Namespace Managers
 
     Public Class ProjectManagerSingleton
-        Private Const XML_PROGRAM_PATH As String = "Project/Programs/Program"
-        Private Const XML_ROOT_ELEMENT = "Project"
-        Private Const XML_PROGEAMS_ELEMENT = "Programs"
-        Private Const XML_PROGEAM_ELEMENT = "Program"
-        Private Const XML_BOOKMARKS_ELEMENT = "BookMarks"
-        Private Const XML_BOOKMARK_ELEMENT = "BookMark"
-        Private Const XML_PROGRAM_NAME_ATTRIBUTE As String = "FileName"
-        Private Const XML_PROGRAM_TYPE_ATTRIBUTE As String = "Type"
-        Private Const XML_BOOKMARK_FILENAME_ATTRIBUTE = "FileName"
-        Private Const XML_BOOKMARK_LOCATION_ATTRIBUTE = "Location"
+        Private Const XmlProgramPath As String = "Project/Programs/Program"
+        Private Const XmlRootElement = "Project"
+        Private Const XmlProgeamsElement = "Programs"
+        Private Const XmlProgeamElement = "Program"
+        Private Const XmlBookmarksElement = "BookMarks"
+        Private Const XmlBookmarkElement = "BookMark"
+        Private Const XmlProgramNameAttribute As String = "FileName"
+        Private Const XmlProgramTypeAttribute As String = "Type"
+        Private Const XmlBookmarkFilenameAttribute = "FileName"
+        Private Const XmlBookmarkLocationAttribute = "Location"
 
         Private _projectInfo As ProjectInfo
 
@@ -106,26 +106,26 @@ Namespace Managers
                 xmlWriteSettings.Indent = True
 
                 xmlWriter = Xml.XmlWriter.Create(_projectInfo.ProjectFileName(), xmlWriteSettings)
-                xmlWriter.WriteStartElement(XML_ROOT_ELEMENT)
+                xmlWriter.WriteStartElement(XmlRootElement)
 
-                xmlWriter.WriteStartElement(XML_PROGEAMS_ELEMENT)
+                xmlWriter.WriteStartElement(XmlProgeamsElement)
                 attributeList = New Dictionary(Of String, String)
                 For Each progarmInfo As ProgramInfo In Me._projectInfo.ProgramInfos()
                     relativePath = GetRelativePath(parentPath, progarmInfo.ProgramFileName, Path.DirectorySeparatorChar)
-                    xmlWriter.WriteStartElement(XML_PROGEAM_ELEMENT)
-                    xmlWriter.WriteAttributeString(XML_PROGRAM_NAME_ATTRIBUTE, relativePath)
-                    xmlWriter.WriteAttributeString(XML_PROGRAM_TYPE_ATTRIBUTE, progarmInfo.ProgramType)
+                    xmlWriter.WriteStartElement(XmlProgeamElement)
+                    xmlWriter.WriteAttributeString(XmlProgramNameAttribute, relativePath)
+                    xmlWriter.WriteAttributeString(XmlProgramTypeAttribute, progarmInfo.ProgramType)
                     xmlWriter.WriteEndElement()
                 Next
                 xmlWriter.WriteFullEndElement()
 
-                xmlWriter.WriteStartElement(XML_BOOKMARKS_ELEMENT)
+                xmlWriter.WriteStartElement(XmlBookmarksElement)
                 For Each doc As Document In DocumentManager.Documents
                     relativePath = GetRelativePath(parentPath, doc.DocumentFileName, Path.DirectorySeparatorChar)
                     For Each bookMarkDefine As Integer In Me.GetBookMarkDefines(doc)
-                        xmlWriter.WriteStartElement(XML_BOOKMARK_ELEMENT)
-                        xmlWriter.WriteAttributeString(XML_BOOKMARK_FILENAME_ATTRIBUTE, relativePath)
-                        xmlWriter.WriteAttributeString(XML_BOOKMARK_LOCATION_ATTRIBUTE, bookMarkDefine)
+                        xmlWriter.WriteStartElement(XmlBookmarkElement)
+                        xmlWriter.WriteAttributeString(XmlBookmarkFilenameAttribute, relativePath)
+                        xmlWriter.WriteAttributeString(XmlBookmarkLocationAttribute, bookMarkDefine)
                         xmlWriter.WriteEndElement()
                     Next
                 Next
@@ -156,7 +156,7 @@ Namespace Managers
             End If
         End Sub
 
-        Public Function GetRelativePath(ByVal basePath As String, ByVal combinePath As String, ByVal Separater As String) As String
+        Public Function GetRelativePath(ByVal basePath As String, ByVal combinePath As String, ByVal separater As String) As String
             Dim ret As String = combinePath
             Dim bPath() As String = basePath.Split(Separater)
             Dim cPath() As String = combinePath.Split(Separater)
@@ -198,9 +198,9 @@ Namespace Managers
                     projectPath = IO.Path.GetDirectoryName(projectFileName)
                     xmlDoc = New XmlDocument
                     xmlDoc.Load(projectFileName)
-                    For Each programNode As XmlNode In xmlDoc.SelectNodes(XML_PROGRAM_PATH)
-                        programFileName = IO.Path.Combine(projectPath, programNode.Attributes(XML_PROGRAM_NAME_ATTRIBUTE).Value)
-                        programType = programNode.Attributes(XML_PROGRAM_TYPE_ATTRIBUTE).Value
+                    For Each programNode As XmlNode In xmlDoc.SelectNodes(XmlProgramPath)
+                        programFileName = IO.Path.Combine(projectPath, programNode.Attributes(XmlProgramNameAttribute).Value)
+                        programType = programNode.Attributes(XmlProgramTypeAttribute).Value
                         AddProgramInfo(programFileName, programType)
                     Next
                 Catch ex As Exception
@@ -210,7 +210,7 @@ Namespace Managers
             End If
         End Sub
 
-        Private Function GetBookMarkDefines(ByVal Doc As Document) As List(Of Integer)
+        Private Function GetBookMarkDefines(ByVal doc As Document) As List(Of Integer)
             Dim result As List(Of Integer)
             result = New List(Of Integer)
             For i As Integer = 0 To Doc.DocumentLinesCount - 1

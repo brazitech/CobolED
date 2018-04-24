@@ -32,15 +32,15 @@ Namespace Menu.Project
     Public Class OnDeleteFile
         Inherits Menu.MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "Delete File from project"
+        Private Const StrComment As String = "Delete File from project"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

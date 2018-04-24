@@ -25,25 +25,25 @@
 Imports CobolED.Forms
 Namespace Menu.Help
 
-    Public Class OnGPL
+    Public Class OnGpl
         Inherits MenuItemProcessBase
 
-        Private Const GPL_FILENAME As String = "Documents\GPL(English).chm"
-        Private Const STR_COMMENT As String = "GNUGeneral Public License"
+        Private Const GplFilename As String = "Documents\GPL(English).chm"
+        Private Const StrComment As String = "GNUGeneral Public License"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 
         Public Overrides Sub Execute()
-            If IO.File.Exists(GPL_FILENAME) Then
-                System.Windows.Forms.Help.ShowHelp(CobolEDMainForm, GPL_FILENAME)
+            If IO.File.Exists(GplFilename) Then
+                System.Windows.Forms.Help.ShowHelp(CobolEDMainForm, GplFilename)
             Else
             End If
         End Sub

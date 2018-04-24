@@ -27,8 +27,8 @@ Imports System.Windows.Forms
 Namespace Dialogues
     Public Class NewProjectDialog
 
-        Private Const PROJECT_EXTEND = ".ced"
-        Private Const PROJECT_NONAME As String = "NewProject"
+        Private Const ProjectExtend = ".ced"
+        Private Const ProjectNoname As String = "NewProject"
 
         Public ReadOnly Property ProjectFullName() As String
             Get
@@ -70,11 +70,11 @@ Namespace Dialogues
         End Sub
 
         Private Sub _txtProjectName_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles _txtProjectName.LostFocus
-            _txtProjectName.Text = IO.Path.GetFileNameWithoutExtension(_txtProjectName.Text.Trim) & PROJECT_EXTEND
+            _txtProjectName.Text = IO.Path.GetFileNameWithoutExtension(_txtProjectName.Text.Trim) & ProjectExtend
         End Sub
 
         Private Sub NewProjectDialog_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-            _txtProjectName.Text = PROJECT_NONAME & PROJECT_EXTEND
+            _txtProjectName.Text = ProjectNoname & ProjectExtend
         End Sub
 
         Private Function InputCheck() As Integer

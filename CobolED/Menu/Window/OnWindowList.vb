@@ -31,15 +31,15 @@ Namespace Menu.Window
     Public Class OnWindowList
         Inherits MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "List all of the open windows"
+        Private Const StrComment As String = "List all of the open windows"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

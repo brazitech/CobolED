@@ -29,15 +29,15 @@ Namespace Menu.Window
     Public Class OnMinimizeWindow
         Inherits Menu.MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "Minimum display all windows"
+        Private Const StrComment As String = "Minimum display all windows"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

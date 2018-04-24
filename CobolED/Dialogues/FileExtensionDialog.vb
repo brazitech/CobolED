@@ -32,7 +32,7 @@ Imports CobolEDCore.Infos.Analyzer
 Namespace Dialogues
     Public Class FileExtensionDialog
 
-        Private Const EXTENSION As String = "{ 0 } analyzer corresponding file extension"
+        Private Const Extension As String = "{ 0 } analyzer corresponding file extension"
         Private _strAnalyzerName As String
         Private _strExtensions As String
 

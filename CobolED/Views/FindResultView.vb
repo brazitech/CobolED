@@ -32,8 +32,8 @@ Imports CobolED.Forms
 Namespace Views
     Public Class FindResultView
 
-        Private Const END_STRING As String = "Matching Row: {0} "&" match to File: {1} "&" Search for File total number : { 2 }"
-        Private Const LINE_STRING As String = "{0} ({1})        {2}"
+        Private Const EndString As String = "Matching Row: {0} "&" match to File: {1} "&" Search for File total number : { 2 }"
+        Private Const LineString As String = "{0} ({1})        {2}"
 
         Public Sub SetFindResult(ByVal findResult As List(Of FindResultInfo), ByVal allFileCount As Integer)
             Dim hitFileCount As Integer
@@ -81,11 +81,11 @@ Namespace Views
         Private Function CreateEndString(ByVal listCount As Integer, _
                                          ByVal hitFileCount As Integer, _
                                          ByVal allFileCount As Integer) As String
-            Return String.Format(END_STRING, listCount, hitFileCount, allFileCount)
+            Return String.Format(EndString, listCount, hitFileCount, allFileCount)
         End Function
 
         Private Function CreateLineString(ByVal findResult As FindResultInfo) As String
-            Return String.Format(LINE_STRING, findResult.FindResultFileName, findResult.FindResultRow, findResult.FindResultLine)
+            Return String.Format(LineString, findResult.FindResultFileName, findResult.FindResultRow, findResult.FindResultLine)
         End Function
 
     End Class

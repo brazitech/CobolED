@@ -30,9 +30,9 @@ Namespace Menu
     Public MustInherit Class MenuItemProcessBase
         Implements IMenuItemProcess
 
-        Private _cobolEDMainForm As CobolEDMainForm
+        Private _cobolEdMainForm As CobolEDMainForm
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             _cobolEDMainForm = cobolEDMainForm
         End Sub
 
@@ -62,7 +62,7 @@ Namespace Menu
 
         Public MustOverride Sub Execute() Implements IMenuItemProcess.Execute
 
-        Protected ReadOnly Property CobolEDMainForm() As CobolEDMainForm
+        Protected ReadOnly Property CobolEdMainForm() As CobolEDMainForm
             Get
                 Return _cobolEDMainForm
             End Get

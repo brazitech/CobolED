@@ -30,17 +30,17 @@ Namespace Menu.Window
         Inherits MenuItemProcessBase
 
         Private _documentFileName As String
-        Private Const STR_COMMENT As String = "Display the Specified window"
+        Private Const StrComment As String = "Display the Specified window"
 
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm, ByVal documentFileName As String)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm, ByVal documentFileName As String)
             MyBase.New(cobolEDMainForm)
             _documentFileName = documentFileName
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

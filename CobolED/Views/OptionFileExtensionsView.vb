@@ -29,7 +29,7 @@ Imports System.Text
 Namespace Views
     Public Class OptionFileExtensionsView
 
-        Private Const FILE_EXTENSION_SEPARATOR As String = "."
+        Private Const FileExtensionSeparator As String = "."
 
         Private _fileExtensionsDialog As FileExtensionDialog
 
@@ -97,12 +97,12 @@ Namespace Views
             Dim arrayExtensions() As String
 
             rtnList = New List(Of String)
-            arrayExtensions = strExtensions.Split(FILE_EXTENSION_SEPARATOR)
+            arrayExtensions = strExtensions.Split(FileExtensionSeparator)
             If arrayExtensions.Length > 1 Then
                 For i As Integer = 1 To arrayExtensions.Length - 1
                     If arrayExtensions(i) <> String.Empty AndAlso _
-                       rtnList.IndexOf(FILE_EXTENSION_SEPARATOR & arrayExtensions(i).ToLower) < 0 Then
-                        rtnList.Add(FILE_EXTENSION_SEPARATOR & arrayExtensions(i).ToLower)
+                       rtnList.IndexOf(FileExtensionSeparator & arrayExtensions(i).ToLower) < 0 Then
+                        rtnList.Add(FileExtensionSeparator & arrayExtensions(i).ToLower)
                     Else
                     End If
                 Next

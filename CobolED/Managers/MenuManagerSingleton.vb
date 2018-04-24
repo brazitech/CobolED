@@ -76,7 +76,7 @@ Namespace Managers
             End Get
         End Property
 
-        Public Sub Initialize(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub Initialize(ByVal cobolEdMainForm As CobolEDMainForm)
             CreateProcessList(cobolEDMainForm)
             CreateEditorContextMenu(cobolEDMainForm)
             CreateProjectNodeContextMenu(cobolEDMainForm)
@@ -116,7 +116,7 @@ Namespace Managers
             End If
         End Sub
 
-        Private Sub CreateProcessList(ByVal cobolEDMainForm As CobolEDMainForm)
+        Private Sub CreateProcessList(ByVal cobolEdMainForm As CobolEDMainForm)
 
             AddMenuItemProcess(cobolEDMainForm._menuFile, Nothing)
             AddMenuItemProcess(cobolEDMainForm._menuNewProject, New File.OnNewProject(cobolEDMainForm))
@@ -185,7 +185,7 @@ Namespace Managers
 
         End Sub
 
-        Private Sub CreateEditorContextMenu(ByVal cobolEDMainForm As CobolEDMainForm)
+        Private Sub CreateEditorContextMenu(ByVal cobolEdMainForm As CobolEDMainForm)
 
             EditorContextMenu.Items.Clear()
 
@@ -202,7 +202,7 @@ Namespace Managers
 
         End Sub
 
-        Private Sub CreateProjectNodeContextMenu(ByVal cobolEDMainForm As CobolEDMainForm)
+        Private Sub CreateProjectNodeContextMenu(ByVal cobolEdMainForm As CobolEDMainForm)
             ProjectNodeContextMenu.Items.Clear()
 
             AddContextMenuItemProcess(cobolEDMainForm._menuAddNewFile, ProjectNodeContextMenu)
@@ -210,7 +210,7 @@ Namespace Managers
 
         End Sub
 
-        Private Sub CreateProgramNodeContextMenu(ByVal cobolEDMainForm As CobolEDMainForm)
+        Private Sub CreateProgramNodeContextMenu(ByVal cobolEdMainForm As CobolEDMainForm)
             ProgramNodeContextMenu.Items.Clear()
 
             AddContextMenuItemProcess(cobolEDMainForm._menuDeleteFile, ProgramNodeContextMenu)

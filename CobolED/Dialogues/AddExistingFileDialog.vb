@@ -34,11 +34,11 @@ Namespace Dialogues
     Public Class AddExistingFileDialog
         Inherits CommonDialog
 
-        Private Const DLG_FILTER_SEPRATOR_CHAR As Char = ChrW(0)
-        Private Const DLG_TITLE As String = "Select an existing file"
-        Private Const USERCONTROL_LEFT As Integer = 90
-        Private Const DIALOG_HEIGHT As Integer = 420
-        Private Const USERCONTROL_TOP As Integer = 350
+        Private Const DlgFilterSepratorChar As Char = ChrW(0)
+        Private Const DlgTitle As String = "Select an existing file"
+        Private Const UsercontrolLeft As Integer = 90
+        Private Const DialogHeight As Integer = 420
+        Private Const UsercontrolTop As Integer = 350
 
         Private _hookProcSub As OFNHookProc = AddressOf HookProc
         Private _userControl As UserControls.AnalyzerComboBox
@@ -113,12 +113,12 @@ Namespace Dialogues
 
             ofn.nStructSize = Marshal.SizeOf(ofn)
             ofn.ptrOwner = hwndOwner
-            ofn.sFilter = SettingManager.SettingInfo.FileFilter.Replace("|", DLG_FILTER_SEPRATOR_CHAR) & DLG_FILTER_SEPRATOR_CHAR
+            ofn.sFilter = SettingManager.SettingInfo.FileFilter.Replace("|", DlgFilterSepratorChar) & DlgFilterSepratorChar
             ofn.sFile = New String(New Char(256) {})
             ofn.nMaxFile = ofn.sFile.Length
             ofn.sFileTitle = New String(New Char(64) {})
             ofn.nMaxFileTitle = ofn.sFileTitle.Length
-            ofn.sTitle = DLG_TITLE
+            ofn.sTitle = DlgTitle
             ofn.nFlags = OFN_EXPLORER Or _
             OFN_ENABLEHOOK Or _
             OFN_LONGNAMES Or _
@@ -149,13 +149,13 @@ Namespace Dialogues
             rcClient.X = rcTemp.left
             rcClient.Y = rcTemp.top
             rcClient.Width = rcTemp.right - rcTemp.left
-            rcClient.Height = DIALOG_HEIGHT
+            rcClient.Height = DialogHeight
             MoveWindow(hWndParent, rcClient.X, rcClient.Y, rcClient.Width, rcClient.Height, True)
 
 
             ' Position the user-supplied control alongside the content panel
-            rcContent.X = USERCONTROL_LEFT
-            rcContent.Y = USERCONTROL_TOP
+            rcContent.X = UsercontrolLeft
+            rcContent.Y = UsercontrolTop
             rcContent.Width = _userControl.Width
             rcContent.Height = _userControl.Height
             MoveWindow(_userControl.Handle, rcContent.X, rcContent.Y, rcContent.Width, rcContent.Height, True)
@@ -163,7 +163,7 @@ Namespace Dialogues
 
         Private Sub SetAnalyzerComboBox(ByVal path As String)
             Dim fileExternsion As String
-            Dim AnalyzerName As String
+            Dim analyzerName As String
             fileExternsion = IO.Path.GetExtension(path)
             AnalyzerName = SettingManager.SettingInfo.FileExtension(fileExternsion)
             If AnalyzerName Is Nothing Then

@@ -66,8 +66,8 @@ Namespace Managers
 
         Public Sub InitializeMemberInfosFromProjectInfo(ByVal projectInfo As ProjectInfo)
             Dim document As Document
-            Dim cobolEDAnalyzer As ICobolEDAnalyzer
-            Dim cobolEDSyntax As ICobolEDSyntax
+            Dim cobolEdAnalyzer As ICobolEDAnalyzer
+            Dim cobolEdSyntax As ICobolEDSyntax
 
             For Each programinfo As ProgramInfo In projectInfo.ProgramInfos
                 document = DocumentManager.Documents(programinfo.ProgramFileName)
@@ -84,7 +84,7 @@ Namespace Managers
 
         End Sub
 
-        Public Sub SetMembers(ByVal document As Document, ByVal cobolEDSyntax As ICobolEDSyntax)
+        Public Sub SetMembers(ByVal document As Document, ByVal cobolEdSyntax As ICobolEDSyntax)
             Dim functionInfoList As List(Of FunctionInfo)
             Dim variableInfoList As List(Of VariableInfo)
             Dim includeInfoList As List(Of IncludeInfo)
@@ -107,13 +107,13 @@ Namespace Managers
 
         End Sub
 
-        Public Sub DeleteMembers(ByVal DocumentName As String)
+        Public Sub DeleteMembers(ByVal documentName As String)
             _functionInfoTable.Remove(DocumentName)
             _variableInfoTable.Remove(DocumentName)
             _includeInfoTable.Remove(DocumentName)
         End Sub
 
-        Public Sub SetFunctionInfos(ByVal document As Document, ByVal cobolEDSyntax As ICobolEDSyntax)
+        Public Sub SetFunctionInfos(ByVal document As Document, ByVal cobolEdSyntax As ICobolEDSyntax)
             Dim functionInfoList As List(Of FunctionInfo)
             If cobolEDSyntax IsNot Nothing Then
                 _functionInfoTable.Remove(document.DocumentFileName)
@@ -123,7 +123,7 @@ Namespace Managers
             End If
         End Sub
 
-        Public Sub SetVariableInfos(ByVal document As Document, ByVal cobolEDSyntax As ICobolEDSyntax)
+        Public Sub SetVariableInfos(ByVal document As Document, ByVal cobolEdSyntax As ICobolEDSyntax)
             Dim variableInfoList As List(Of VariableInfo)
             If cobolEDSyntax IsNot Nothing Then
                 _variableInfoTable.Remove(document.DocumentFileName)
@@ -133,7 +133,7 @@ Namespace Managers
             End If
         End Sub
 
-        Public Sub SetIncludeInfos(ByVal document As Document, ByVal cobolEDSyntax As ICobolEDSyntax)
+        Public Sub SetIncludeInfos(ByVal document As Document, ByVal cobolEdSyntax As ICobolEDSyntax)
             Dim includeInfoList As List(Of IncludeInfo)
             If cobolEDSyntax IsNot Nothing Then
                 _includeInfoTable.Remove(document.DocumentFileName)
@@ -336,7 +336,7 @@ Namespace Managers
         End Function
 
         Private Sub OnEditorMouseStopAtWord(ByVal sender As Object, ByVal e As MouseStopAtWordEventArgs)
-            Dim cobolEDEditor As ICobolEDEditor
+            Dim cobolEdEditor As ICobolEDEditor
             Dim functionInfo As FunctionInfo
             Dim variableInfo As VariableInfo
             Dim commentTipPosition As Point
@@ -381,8 +381,8 @@ Namespace Managers
             End If
         End Sub
 
-        Private Sub UpdateMember(ByVal cobolEDEditor As ICobolEDEditor)
-            Dim cobolEDSyntax As ICobolEDSyntax
+        Private Sub UpdateMember(ByVal cobolEdEditor As ICobolEDEditor)
+            Dim cobolEdSyntax As ICobolEDSyntax
             Dim updateEditorThread As Thread
 
             If ProjectManager.ProjectInfo IsNot Nothing AndAlso _
@@ -406,7 +406,7 @@ Namespace Managers
         End Sub
 
         Private Sub SetEditorCodeCompletionForm(ByVal threadObject As Object)
-            Dim cobolEDEditor As ICobolEDEditor
+            Dim cobolEdEditor As ICobolEDEditor
             Dim keyWords As List(Of String)
             Dim functionList As List(Of String)
             Dim variableList As List(Of String)

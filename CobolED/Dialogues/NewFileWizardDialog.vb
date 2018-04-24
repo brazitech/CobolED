@@ -29,13 +29,13 @@ Imports Common
 
 Namespace Dialogues
     Public Class NewFileWizardDialog
-        Private Const XML_TABPAGE_DEFINE As String = "Template/WizardDefine/TabPage"
-        Private Const XML_TABPAGE_NAME_ATTR As String = "Name"
-        Private Const XML_CONTROL_NAME_ATTR As String = "Name"
-        Private Const XML_CONTROL_LOCATIONX_ATTR As String = "Left"
-        Private Const XML_CONTROL_LOCATIONY_ATTR As String = "Top"
-        Private Const XML_REPLACEKEY_ID_ATTR As String = "Id"
-        Private Const XML_CONTROL_WIDTH_ATTR As String = "Width"
+        Private Const XmlTabpageDefine As String = "Template/WizardDefine/TabPage"
+        Private Const XmlTabpageNameAttr As String = "Name"
+        Private Const XmlControlNameAttr As String = "Name"
+        Private Const XmlControlLocationxAttr As String = "Left"
+        Private Const XmlControlLocationyAttr As String = "Top"
+        Private Const XmlReplacekeyIdAttr As String = "Id"
+        Private Const XmlControlWidthAttr As String = "Width"
 
         Private _defineInfos As Dictionary(Of String, String)
 
@@ -94,15 +94,15 @@ Namespace Dialogues
             xmlDoc = New XmlDocument
             Try
                 xmlDoc.Load(templateName)
-                For Each xmlNode As XmlNode In xmlDoc.SelectNodes(XML_TABPAGE_DEFINE)
-                    tabInstance = AddTabPage(xmlNode.Attributes(XML_TABPAGE_NAME_ATTR).Value, Me._tabCFrame)
+                For Each xmlNode As XmlNode In xmlDoc.SelectNodes(XmlTabpageDefine)
+                    tabInstance = AddTabPage(xmlNode.Attributes(XmlTabpageNameAttr).Value, Me._tabCFrame)
                     For Each xmlChildNode As XmlNode In xmlNode.ChildNodes
 
-                        AddTextControl(xmlChildNode.Attributes(XML_CONTROL_NAME_ATTR).Value, _
-                                       xmlChildNode.Attributes(XML_CONTROL_LOCATIONX_ATTR).Value, _
-                                       xmlChildNode.Attributes(XML_CONTROL_LOCATIONY_ATTR).Value, _
-                                       xmlChildNode.Attributes(XML_CONTROL_WIDTH_ATTR).Value, _
-                                       xmlChildNode.Attributes(XML_REPLACEKEY_ID_ATTR).Value, _
+                        AddTextControl(xmlChildNode.Attributes(XmlControlNameAttr).Value, _
+                                       xmlChildNode.Attributes(XmlControlLocationxAttr).Value, _
+                                       xmlChildNode.Attributes(XmlControlLocationyAttr).Value, _
+                                       xmlChildNode.Attributes(XmlControlWidthAttr).Value, _
+                                       xmlChildNode.Attributes(XmlReplacekeyIdAttr).Value, _
                                        tabInstance)
                     Next
                 Next
@@ -124,7 +124,7 @@ Namespace Dialogues
                                         ByVal textControlLocationX As Integer, _
                                         ByVal textControlLocationY As Integer, _
                                         ByVal textControlWidth As Integer, _
-                                        ByVal textControlID As String, _
+                                        ByVal textControlId As String, _
                                         ByRef tabPage As TabPage) As TextBox
             Dim textControl As TextBox
             Dim labelControl As Label

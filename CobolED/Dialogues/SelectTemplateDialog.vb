@@ -28,14 +28,14 @@ Imports CobolED.Managers.Manager
 
 Namespace Dialogues
     Public Class SelectTemplateDialog
-        Private Const TEMPLATE_DIRECTORY As String = "template"
-        Private Const ROOT_TEMPLATE_NAME As String = "Template"
-        Private Const TEMPLATE_OPTION As String = "*.template"
-        Private Const TEMPLATE_EXTEND As String = ".template"
-        Private Const IMG_CLOSED_FOLDER As Integer = 0
-        Private Const IMG_OPENED_FOLDER As Integer = 1
-        Private Const IMG_TEMPLATE As Integer = 0
-        Private Const FILE_NONAME As String = "NoNameFile.txt"
+        Private Const TemplateDirectory As String = "template"
+        Private Const RootTemplateName As String = "Template"
+        Private Const TemplateOption As String = "*.template"
+        Private Const TemplateExtend As String = ".template"
+        Private Const ImgClosedFolder As Integer = 0
+        Private Const ImgOpenedFolder As Integer = 1
+        Private Const ImgTemplate As Integer = 0
+        Private Const FileNoname As String = "NoNameFile.txt"
 
         Private _templateFullDir = String.Empty
         Private _selectedTemplateName As String
@@ -84,13 +84,13 @@ Namespace Dialogues
         Private Sub SelectTemplateDialog_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
             Dim firstNode As TreeNode
             Me._trvTemplateDir.Nodes.Clear()
-            firstNode = _trvTemplateDir.Nodes.Add(ROOT_TEMPLATE_NAME)
-            firstNode.ImageIndex = IMG_CLOSED_FOLDER
-            firstNode.SelectedImageIndex = IMG_OPENED_FOLDER
-            firstNode.Tag = IO.Path.Combine(IO.Path.GetDirectoryName(Application.ExecutablePath), TEMPLATE_DIRECTORY)
-            InitializeTemplateTreeView(TEMPLATE_DIRECTORY, firstNode)
+            firstNode = _trvTemplateDir.Nodes.Add(RootTemplateName)
+            firstNode.ImageIndex = ImgClosedFolder
+            firstNode.SelectedImageIndex = ImgOpenedFolder
+            firstNode.Tag = IO.Path.Combine(IO.Path.GetDirectoryName(Application.ExecutablePath), TemplateDirectory)
+            InitializeTemplateTreeView(TemplateDirectory, firstNode)
             _lsvTemplateContext.Items.Clear()
-            _txtFileName.Text = FILE_NONAME
+            _txtFileName.Text = FileNoname
             _txtTemplateName.Text = String.Empty
             _trvTemplateDir.Nodes(0).Expand()
             _trvTemplateDir.SelectedNode = _trvTemplateDir.Nodes(0)
@@ -105,8 +105,8 @@ Namespace Dialogues
             If IO.Directory.Exists(parentDir) Then
                 For Each childrenDir As String In IO.Directory.GetDirectories(parentDir)
                     templateNode = templateTreeNode.Nodes.Add(IO.Path.GetFileName(childrenDir))
-                    templateNode.ImageIndex = IMG_CLOSED_FOLDER
-                    templateNode.SelectedImageIndex = IMG_OPENED_FOLDER
+                    templateNode.ImageIndex = ImgClosedFolder
+                    templateNode.SelectedImageIndex = ImgOpenedFolder
                     templateNode.Tag = childrenDir
                     subDirName = IO.Path.Combine(dir, childrenDir)
                     InitializeTemplateTreeView(subDirName, templateNode)
@@ -123,8 +123,8 @@ Namespace Dialogues
             Dim templateItem As ListViewItem
             Me._lsvTemplateContext.Items.Clear()
             If IO.Directory.Exists(notePath) Then
-                For Each fileName As String In Directory.GetFiles(notePath, TEMPLATE_OPTION, SearchOption.TopDirectoryOnly)
-                    templateItem = New ListViewItem(IO.Path.GetFileNameWithoutExtension(fileName), IMG_TEMPLATE)
+                For Each fileName As String In Directory.GetFiles(notePath, TemplateOption, SearchOption.TopDirectoryOnly)
+                    templateItem = New ListViewItem(IO.Path.GetFileNameWithoutExtension(fileName), ImgTemplate)
                     templateItem.Tag = fileName
                     Me._lsvTemplateContext.Items.Add(templateItem)
                 Next

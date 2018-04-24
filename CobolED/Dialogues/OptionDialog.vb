@@ -30,9 +30,9 @@ Imports CobolED.Managers
 Namespace Dialogues
     Public Class OptionDialog
 
-        Private Const ITEM_GENERAL As String = "Folder"
-        Private Const ITEM_COLOR As String = "Color"
-        Private Const ITEM_FILEEXPANSION As String = "Ext"
+        Private Const ItemGeneral As String = "Folder"
+        Private Const ItemColor As String = "Color"
+        Private Const ItemFileexpansion As String = "Ext"
 
         Public Sub New()
 
@@ -66,16 +66,16 @@ Namespace Dialogues
         End Sub
 
         Private Sub InitializeTreeView()
-            AddTreeViewItem(ITEM_GENERAL, New OptionGeneralView)
-            AddTreeViewItem(ITEM_COLOR, New OptionColorView)
-            AddTreeViewItem(ITEM_FILEEXPANSION, New OptionFileExtensionsView)
+            AddTreeViewItem(ItemGeneral, New OptionGeneralView)
+            AddTreeViewItem(ItemColor, New OptionColorView)
+            AddTreeViewItem(ItemFileexpansion, New OptionFileExtensionsView)
             If _trvItems.Nodes.Count > 0 Then
                 _trvItems.SelectedNode = _trvItems.Nodes(0)
             Else
             End If
         End Sub
 
-        Private Sub AddTreeViewItem(ByVal itemName As String, ByVal OptionView As OptionViewBase)
+        Private Sub AddTreeViewItem(ByVal itemName As String, ByVal optionView As OptionViewBase)
             Dim treeViewItem As TreeNode
             treeViewItem = New TreeNode(itemName)
             treeViewItem.Tag = OptionView

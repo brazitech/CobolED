@@ -35,16 +35,16 @@ Namespace Menu.File
         Inherits MenuItemProcessBase
 
         Private _newProjectDialog As NewProjectDialog
-        Private Const STR_COMMENT As String = "Create a new project"
+        Private Const StrComment As String = "Create a new project"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _newProjectDialog = New NewProjectDialog
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

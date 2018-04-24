@@ -34,13 +34,13 @@ Imports CobolEDCore.Enums
 Namespace Managers
 
     Public Class DocumentFormManagerSingleton
-        Private Const DIRTY_FLAG As String = "*"
-        Private Const STATUSBAR_ROW_TEXT As String = "{0} Row"
-        Private Const STATUSBAR_PHYSICALCOL_TEXT As String = "{0} Phys.Col"
-        Private Const STATUSBAR_COL_TEXT As String = "{0} Col"
-        Private Const STATUSBAR_INSERT_TEXT As String = "Insert"
-        Private Const STATUSBAR_OVERWRITE_TEXT As String = "Letter"
-        Private Const SAVE_DIALOG_TITLE As String = "File Close"
+        Private Const DirtyFlag As String = "*"
+        Private Const StatusbarRowText As String = "{0} Row"
+        Private Const StatusbarPhysicalcolText As String = "{0} Phys.Col"
+        Private Const StatusbarColText As String = "{0} Col"
+        Private Const StatusbarInsertText As String = "Insert"
+        Private Const StatusbarOverwriteText As String = "Letter"
+        Private Const SaveDialogTitle As String = "File Close"
 
         Private Shared _documentFormManager As DocumentFormManagerSingleton
         Private _unGoToStack As Stack(Of CaretPositionInfo)
@@ -203,12 +203,12 @@ Namespace Managers
 
         End Sub
 
-        Public Function AddDocumentForm(ByVal document As Document, ByVal cobolEDAnalyzer As ICobolEDAnalyzer) As DocumentForm
+        Public Function AddDocumentForm(ByVal document As Document, ByVal cobolEdAnalyzer As ICobolEDAnalyzer) As DocumentForm
             Dim documentForm As DocumentForm
             documentForm = New DocumentForm(EditorManager.CobolEDEditorFactory(document, cobolEDAnalyzer))
             documentForm.Name = document.DocumentFileName
             If document.DocumentDirtyFlag Then
-                documentForm.Text = document.DocumentFileName & DIRTY_FLAG
+                documentForm.Text = document.DocumentFileName & DirtyFlag
             Else
                 documentForm.Text = document.DocumentFileName
             End If
@@ -253,7 +253,7 @@ Namespace Managers
             document = DirectCast(sender, Document)
             documentForm = DocumentForms(document.DocumentFileName)
             If documentForm IsNot Nothing AndAlso e.DocumentDirtyFlag Then
-                documentForm.Text = document.DocumentFileName & DIRTY_FLAG
+                documentForm.Text = document.DocumentFileName & DirtyFlag
             Else
                 documentForm.Text = document.DocumentFileName
             End If
@@ -315,7 +315,7 @@ Namespace Managers
 
         Private Sub OnDocumentFormActived(ByVal sender As Object, ByVal e As System.EventArgs)
             Dim documentForm As DocumentForm
-            Dim cobolEDEditor As ICobolEDEditor
+            Dim cobolEdEditor As ICobolEDEditor
             Dim currentLine As String
             Dim physicalCol As Integer
 
@@ -332,23 +332,23 @@ Namespace Managers
         End Sub
 
         Private Sub SetStatusBarRow(ByVal row As Integer)
-            CobolEDMainForm._statusBarRow.Text = String.Format(STATUSBAR_ROW_TEXT, row)
+            CobolEDMainForm._statusBarRow.Text = String.Format(StatusbarRowText, row)
         End Sub
 
         Private Sub SetStatusBarPhysicalCol(ByVal col As Integer)
-            CobolEDMainForm._statusBarPhysicalCol.Text = String.Format(STATUSBAR_PHYSICALCOL_TEXT, col)
+            CobolEDMainForm._statusBarPhysicalCol.Text = String.Format(StatusbarPhysicalcolText, col)
         End Sub
 
         Private Sub SetStatusBarCol(ByVal col As Integer)
-            CobolEDMainForm._statusBarCol.Text = String.Format(STATUSBAR_COL_TEXT, col)
+            CobolEDMainForm._statusBarCol.Text = String.Format(StatusbarColText, col)
         End Sub
 
         Private Sub SetStatusBarCaretStatus(ByVal status As CaretStatusEnum)
             Select Case status
                 Case CaretStatusEnum.Insert
-                    CobolEDMainForm._statusBarCaretStatus.Text = STATUSBAR_INSERT_TEXT
+                    CobolEDMainForm._statusBarCaretStatus.Text = StatusbarInsertText
                 Case CaretStatusEnum.OverWrite
-                    CobolEDMainForm._statusBarCaretStatus.Text = STATUSBAR_OVERWRITE_TEXT
+                    CobolEDMainForm._statusBarCaretStatus.Text = StatusbarOverwriteText
                 Case Else
                     CobolEDMainForm._statusBarCaretStatus.Text = String.Empty
             End Select

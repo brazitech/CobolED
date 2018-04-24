@@ -33,9 +33,9 @@ Imports Common
 Namespace Managers
     Public Class SearchManagerSingleton
 
-        Private Const XML_SEARCHENGINEDEFINE_PATH As String = "CobolEDComponentDefines/CobolEDSearchEngineDefine"
-        Private Const XML_CLASSNAME_ATTRIBUTE As String = "ClassName"
-        Private Const XML_FILENAME_ATTRIBUTE As String = "FileName"
+        Private Const XmlSearchenginedefinePath As String = "CobolEDComponentDefines/CobolEDSearchEngineDefine"
+        Private Const XmlClassnameAttribute As String = "ClassName"
+        Private Const XmlFilenameAttribute As String = "FileName"
 
         Private Shared _searchManager As SearchManagerSingleton
 
@@ -44,7 +44,7 @@ Namespace Managers
 
         Private Sub New()
             _cobolEDSearchEngine = Nothing
-            _findDialog = New FindDialog(CobolEDMainForm)
+            _findDialog = New FindDialog(CobolEdMainForm)
         End Sub
 
         Public Shared ReadOnly Property SearchManager() As SearchManagerSingleton
@@ -93,9 +93,9 @@ Namespace Managers
             Dim searchEngineType As Type
 
             Try
-                searchEngineDefineNode = xmlDoc.SelectSingleNode(XML_SEARCHENGINEDEFINE_PATH)
-                searchEngineClassName = searchEngineDefineNode.Attributes(XML_CLASSNAME_ATTRIBUTE).Value
-                searchEngineFileName = IO.Path.Combine(Application.StartupPath, searchEngineDefineNode.Attributes(XML_FILENAME_ATTRIBUTE).Value)
+                searchEngineDefineNode = xmlDoc.SelectSingleNode(XmlSearchenginedefinePath)
+                searchEngineClassName = searchEngineDefineNode.Attributes(XmlClassnameAttribute).Value
+                searchEngineFileName = IO.Path.Combine(Application.StartupPath, searchEngineDefineNode.Attributes(XmlFilenameAttribute).Value)
                 searchEngineType = Assembly.LoadFile(searchEngineFileName).GetType(searchEngineClassName)
                 _cobolEDSearchEngine = Activator.CreateInstance(searchEngineType)
             Catch ex As Exception

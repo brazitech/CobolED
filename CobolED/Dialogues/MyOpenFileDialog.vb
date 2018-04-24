@@ -30,7 +30,7 @@ Namespace Dialogues
     Public Class MyOpenFileDialog
         Private _openFileDialog As OpenFileDialog
 
-        Private Const DLG_TITLE As String = "Open file"
+        Private Const DlgTitle As String = "Open file"
 
         Public Sub New()
             _openFileDialog = New OpenFileDialog
@@ -38,7 +38,7 @@ Namespace Dialogues
             _openFileDialog.CheckPathExists = True
             _openFileDialog.Multiselect = False
             _openFileDialog.RestoreDirectory = True
-            _openFileDialog.Title = DLG_TITLE
+            _openFileDialog.Title = DlgTitle
         End Sub
 
         Public ReadOnly Property FileName() As String

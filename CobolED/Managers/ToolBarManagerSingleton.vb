@@ -50,7 +50,7 @@ Namespace Managers
             End Get
         End Property
 
-        Public Sub Initialize(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub Initialize(ByVal cobolEdMainForm As CobolEDMainForm)
 
             AddToolBarButtonProcess(cobolEDMainForm._toolBarNewProject, New File.OnNewProject(cobolEDMainForm))
             AddToolBarButtonProcess(cobolEDMainForm._toolBarOpenProject, New File.OnOpenProject(cobolEDMainForm))

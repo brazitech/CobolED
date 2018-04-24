@@ -33,9 +33,9 @@ Namespace Forms
     Public Class DocumentForm
 
         Private WithEvents _document As Document
-        Private WithEvents _cobolEDEditor As ICobolEDEditor
+        Private WithEvents _cobolEdEditor As ICobolEDEditor
 
-        Public Sub New(ByVal cobolEDEditor As ICobolEDEditor)
+        Public Sub New(ByVal cobolEdEditor As ICobolEDEditor)
             InitializeComponent()
             _document = cobolEDEditor.Document
             _cobolEDEditor = cobolEDEditor
@@ -45,7 +45,7 @@ Namespace Forms
 
         End Sub
 
-        Public ReadOnly Property CobolEDEditor() As ICobolEDEditor
+        Public ReadOnly Property CobolEdEditor() As ICobolEDEditor
             Get
                 Return Me._cobolEDEditor
             End Get

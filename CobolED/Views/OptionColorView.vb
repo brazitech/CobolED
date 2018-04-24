@@ -30,25 +30,25 @@ Imports CobolED.Managers.Manager
 Namespace Views
     Public Class OptionColorView
 
-        Private Const ITEM_COMMENT As String = "comment"
-        Private Const ITEM_NORMALWORD As String = "word"
-        Private Const ITEM_NUMBER As String = "number"
-        Private Const ITEM_SPACE As String = "space"
-        Private Const ITEM_OPERATOR As String = "operator"
-        Private Const ITEM_STRING As String = "string"
-        Private Const ITEM_BRACKET As String = "parentheses"
-        Private Const ITEM_END As String = "end"
-        Private Const ITEM_SYMBOL As String = "symbol"
-        Private Const ITEM_KEYWORD As String = "keyword"
-        Private Const ITEM_UNKNOWN As String = "unknown word"
+        Private Const ItemComment As String = "comment"
+        Private Const ItemNormalword As String = "word"
+        Private Const ItemNumber As String = "number"
+        Private Const ItemSpace As String = "space"
+        Private Const ItemOperator As String = "operator"
+        Private Const ItemString As String = "string"
+        Private Const ItemBracket As String = "parentheses"
+        Private Const ItemEnd As String = "end"
+        Private Const ItemSymbol As String = "symbol"
+        Private Const ItemKeyword As String = "keyword"
+        Private Const ItemUnknown As String = "unknown word"
 
-        Private Const COLOR_BLACK As String = "BLACK"
-        Private Const COLOR_WHITE As String = "WHITE"
-        Private Const COLOR_GREEN As String = "GREEN"
-        Private Const COLOR_RED As String = "RED"
-        Private Const COLOR_YELLOW As String = "YELLOW"
-        Private Const COLOR_BLUE As String = "BLUE"
-        Private Const COLOR_CUSTOM As String = "CUSTOM"
+        Private Const ColorBlack As String = "BLACK"
+        Private Const ColorWhite As String = "WHITE"
+        Private Const ColorGreen As String = "GREEN"
+        Private Const ColorRed As String = "RED"
+        Private Const ColorYellow As String = "YELLOW"
+        Private Const ColorBlue As String = "BLUE"
+        Private Const ColorCustom As String = "CUSTOM"
 
         Private _colorDictionary As Dictionary(Of Color, String)
 
@@ -64,17 +64,17 @@ Namespace Views
 
         Public Overrides Sub Initialize(ByVal settingInfo As SettingInfo)
             Me._lsbColorItem.Items.Clear()
-            AddColorItem(ITEM_COMMENT, WordTypeEnum.Comment, settingInfo.FontColor(WordTypeEnum.Comment))
-            AddColorItem(ITEM_NORMALWORD, WordTypeEnum.NormalWord, settingInfo.FontColor(WordTypeEnum.NormalWord))
-            AddColorItem(ITEM_NUMBER, WordTypeEnum.Number, settingInfo.FontColor(WordTypeEnum.Number))
-            AddColorItem(ITEM_SPACE, WordTypeEnum.Space, settingInfo.FontColor(WordTypeEnum.Space))
-            AddColorItem(ITEM_OPERATOR, WordTypeEnum.Operator, settingInfo.FontColor(WordTypeEnum.Operator))
-            AddColorItem(ITEM_STRING, WordTypeEnum.String, settingInfo.FontColor(WordTypeEnum.String))
-            AddColorItem(ITEM_BRACKET, WordTypeEnum.Bracket, settingInfo.FontColor(WordTypeEnum.Bracket))
-            AddColorItem(ITEM_END, WordTypeEnum.End, settingInfo.FontColor(WordTypeEnum.End))
-            AddColorItem(ITEM_SYMBOL, WordTypeEnum.Symbol, settingInfo.FontColor(WordTypeEnum.Symbol))
-            AddColorItem(ITEM_KEYWORD, WordTypeEnum.KeyWord, settingInfo.FontColor(WordTypeEnum.KeyWord))
-            AddColorItem(ITEM_UNKNOWN, WordTypeEnum.Unknown, settingInfo.FontColor(WordTypeEnum.Unknown))
+            AddColorItem(ItemComment, WordTypeEnum.Comment, settingInfo.FontColor(WordTypeEnum.Comment))
+            AddColorItem(ItemNormalword, WordTypeEnum.NormalWord, settingInfo.FontColor(WordTypeEnum.NormalWord))
+            AddColorItem(ItemNumber, WordTypeEnum.Number, settingInfo.FontColor(WordTypeEnum.Number))
+            AddColorItem(ItemSpace, WordTypeEnum.Space, settingInfo.FontColor(WordTypeEnum.Space))
+            AddColorItem(ItemOperator, WordTypeEnum.Operator, settingInfo.FontColor(WordTypeEnum.Operator))
+            AddColorItem(ItemString, WordTypeEnum.String, settingInfo.FontColor(WordTypeEnum.String))
+            AddColorItem(ItemBracket, WordTypeEnum.Bracket, settingInfo.FontColor(WordTypeEnum.Bracket))
+            AddColorItem(ItemEnd, WordTypeEnum.End, settingInfo.FontColor(WordTypeEnum.End))
+            AddColorItem(ItemSymbol, WordTypeEnum.Symbol, settingInfo.FontColor(WordTypeEnum.Symbol))
+            AddColorItem(ItemKeyword, WordTypeEnum.KeyWord, settingInfo.FontColor(WordTypeEnum.KeyWord))
+            AddColorItem(ItemUnknown, WordTypeEnum.Unknown, settingInfo.FontColor(WordTypeEnum.Unknown))
             Me._lsbColorItem.SelectedIndex = 0
         End Sub
 
@@ -87,12 +87,12 @@ Namespace Views
 
         Private Sub InitializeColorDictionary()
             _colorDictionary = New Dictionary(Of Color, String)
-            _colorDictionary.Add(Color.Black, COLOR_BLACK)
-            _colorDictionary.Add(Color.White, COLOR_WHITE)
-            _colorDictionary.Add(Color.Green, COLOR_GREEN)
-            _colorDictionary.Add(Color.Red, COLOR_RED)
-            _colorDictionary.Add(Color.Yellow, COLOR_YELLOW)
-            _colorDictionary.Add(Color.Blue, COLOR_BLUE)
+            _colorDictionary.Add(Color.Black, ColorBlack)
+            _colorDictionary.Add(Color.White, ColorWhite)
+            _colorDictionary.Add(Color.Green, ColorGreen)
+            _colorDictionary.Add(Color.Red, ColorRed)
+            _colorDictionary.Add(Color.Yellow, ColorYellow)
+            _colorDictionary.Add(Color.Blue, ColorBlue)
         End Sub
 
         Private Sub AddColorItem(ByVal text As String, ByVal wordType As WordTypeEnum, ByVal color As Color)
@@ -129,10 +129,10 @@ Namespace Views
                 End If
             Next
 
-            If DirectCast(Me._cboColor.Items(_cboColor.Items.Count - 1), ColorComboBoxItem).Text = COLOR_CUSTOM Then
+            If DirectCast(Me._cboColor.Items(_cboColor.Items.Count - 1), ColorComboBoxItem).Text = ColorCustom Then
                 Me._cboColor.Items.RemoveAt(Me._cboColor.Items.Count - 1)
             End If
-            Me._cboColor.AddItem(color, COLOR_CUSTOM)
+            Me._cboColor.AddItem(color, ColorCustom)
             Me._cboColor.SelectedIndex = _cboColor.Items.Count - 1
         End Sub
 

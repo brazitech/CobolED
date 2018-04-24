@@ -29,9 +29,9 @@ Namespace Managers
 
     Public Class DocumentManagerSingleton
 
-        Private Const XML_BOOKMARK_PATH As String = "Project/BookMarks/BookMark"
-        Private Const XML_BOOKMARK_FILENAME_ATRRIBUTE As String = "FileName"
-        Private Const XML_BOOKMARK_LOCATION_ATRRIBUTE As String = "Location"
+        Private Const XmlBookmarkPath As String = "Project/BookMarks/BookMark"
+        Private Const XmlBookmarkFilenameAtrribute As String = "FileName"
+        Private Const XmlBookmarkLocationAtrribute As String = "Location"
         Private _documents As List(Of Document)
 
         Private Shared _documentManager As DocumentManagerSingleton
@@ -93,8 +93,8 @@ Namespace Managers
 
             projectPath = IO.Path.GetDirectoryName(projectFileName)
             For Each bookMarkNode As XmlNode In GetBookMarkFromProject(projectFileName)
-                fileName = IO.Path.Combine(projectPath, bookMarkNode.Attributes(XML_BOOKMARK_FILENAME_ATRRIBUTE).Value)
-                location = bookMarkNode.Attributes(XML_BOOKMARK_LOCATION_ATRRIBUTE).Value
+                fileName = IO.Path.Combine(projectPath, bookMarkNode.Attributes(XmlBookmarkFilenameAtrribute).Value)
+                location = bookMarkNode.Attributes(XmlBookmarkLocationAtrribute).Value
                 document = Documents(fileName)
                 If document IsNot Nothing AndAlso _
                    location >= 0 AndAlso location <= document.DocumentLinesCount - 1 Then
@@ -134,7 +134,7 @@ Namespace Managers
             Return False
         End Function
 
-        Public Function Reload(ByVal DocumentFileName As String) As Boolean
+        Public Function Reload(ByVal documentFileName As String) As Boolean
             RemoveDocument(DocumentFileName)
             AddDocument(DocumentFileName)
             If IO.File.Exists(DocumentFileName) Then
@@ -150,7 +150,7 @@ Namespace Managers
 
             Try
                 xmlDoc.Load(projectFileName)
-                result = xmlDoc.SelectNodes(XML_BOOKMARK_PATH)
+                result = xmlDoc.SelectNodes(XmlBookmarkPath)
             Catch ex As Exception
                 result = Nothing
             End Try

@@ -30,7 +30,7 @@ Imports CobolED.Managers
 
 Namespace Forms
 
-    Public Class CobolEDMainForm
+    Public Class CobolEdMainForm
 
         Public Sub New()
 

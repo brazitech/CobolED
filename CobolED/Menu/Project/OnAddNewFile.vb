@@ -35,21 +35,21 @@ Imports System.Xml
 Namespace Menu.Project
     Public Class OnAddNewFile
         Inherits Menu.MenuItemProcessBase
-        Private Const XML_TEMPLATE_DEFINE As String = "Template"
-        Private Const XML_ANALYZER_ATTR As String = "Analyzer"
-        Private Const XML_SOURCE_DEFINE As String = "Template/Source/Item"
+        Private Const XmlTemplateDefine As String = "Template"
+        Private Const XmlAnalyzerAttr As String = "Analyzer"
+        Private Const XmlSourceDefine As String = "Template/Source/Item"
 
-        Private Const STR_COMMENT As String = "Add new File to project"
+        Private Const StrComment As String = "Add new File to project"
         Private _selectTemplateDialog As SelectTemplateDialog
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _selectTemplateDialog = New SelectTemplateDialog()
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 
@@ -76,7 +76,7 @@ Namespace Menu.Project
 
                     xmlDoc = New XmlDocument()
                     xmlDoc.Load(_selectTemplateDialog.SelectedTemplateName)
-                    analyzerName = xmlDoc.SelectSingleNode(XML_TEMPLATE_DEFINE).Attributes(XML_ANALYZER_ATTR).Value.Trim
+                    analyzerName = xmlDoc.SelectSingleNode(XmlTemplateDefine).Attributes(XmlAnalyzerAttr).Value.Trim
 
                     If newFileWizardDialog Is Nothing Then
                         CreateProgram(newFileFullName, GetTemplateContent(False), New Dictionary(Of String, String), analyzerName)
@@ -128,7 +128,7 @@ Namespace Menu.Project
             Try
                 contentList = New List(Of String)
                 If hasTemplate AndAlso xmlDoc IsNot Nothing Then
-                    nodeList = xmlDoc.SelectNodes(XML_SOURCE_DEFINE)
+                    nodeList = xmlDoc.SelectNodes(XmlSourceDefine)
                     For i As Integer = 0 To nodeList.Count - 1
                         contentList.Add(nodeList(i).InnerText())
                     Next

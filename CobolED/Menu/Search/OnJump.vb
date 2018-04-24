@@ -33,17 +33,17 @@ Namespace Menu.Search
         Inherits MenuItemProcessBase
 
         Private _jumpDialog As JumpDialog
-        Private Const STR_COMMENT As String = "Move the cursor to the specified line number"
+        Private Const StrComment As String = "Move the cursor to the specified line number"
 
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _jumpDialog = New JumpDialog
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

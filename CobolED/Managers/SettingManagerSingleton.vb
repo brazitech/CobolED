@@ -34,32 +34,32 @@ Imports Common
 Namespace Managers
     Public Class SettingManagerSingleton
 
-        Private Const XML_RECENTPROJECTCOUNT_DEFINE_PATH As String = "CobolEDSettingDefines/GeneralDefines/MaxRecentProjectCount"
-        Private Const XML_RECENTFILECOUNT_DEFINE_PATH As String = "CobolEDSettingDefines/GeneralDefines/MaxRecentFileCount"
-        Private Const XML_FONTCOLOR_DEFINE_PATH As String = "CobolEDSettingDefines/FontColorDefines/FontColorDefine"
-        Private Const XML_RECENTPROJECTS_PATH As String = "CobolEDSettingDefines/RecentProjects/RecentProject"
-        Private Const XML_RECENTFILES_PATH As String = "CobolEDSettingDefines/RecentFiles/RecentFile"
-        Private Const XML_FILEEXTENSION_DEFINE_PATH As String = "CobolEDSettingDefines/FileExtensionDefines/FileExtensionDefine"
+        Private Const XmlRecentprojectcountDefinePath As String = "CobolEDSettingDefines/GeneralDefines/MaxRecentProjectCount"
+        Private Const XmlRecentfilecountDefinePath As String = "CobolEDSettingDefines/GeneralDefines/MaxRecentFileCount"
+        Private Const XmlFontcolorDefinePath As String = "CobolEDSettingDefines/FontColorDefines/FontColorDefine"
+        Private Const XmlRecentprojectsPath As String = "CobolEDSettingDefines/RecentProjects/RecentProject"
+        Private Const XmlRecentfilesPath As String = "CobolEDSettingDefines/RecentFiles/RecentFile"
+        Private Const XmlFileextensionDefinePath As String = "CobolEDSettingDefines/FileExtensionDefines/FileExtensionDefine"
 
-        Private Const XML_ROOT_ELEMENT As String = "CobolEDSettingDefines"
-        Private Const XML_GENERAL_DEFINES As String = "GeneralDefines"
-        Private Const XML_GENERAL_MAXRECENTPROJECTCOUNT As String = "MaxRecentProjectCount"
-        Private Const XML_GENERAL_MAXRECENTFILECOUNT As String = "MaxRecentFileCount"
-        Private Const XML_RECENTPROJECTS As String = "RecentProjects"
-        Private Const XML_RECENTPROJECT As String = "RecentProject"
-        Private Const XML_RECENTFILES As String = "RecentFiles"
-        Private Const XML_RECENTFILE As String = "RecentFile"
+        Private Const XmlRootElement As String = "CobolEDSettingDefines"
+        Private Const XmlGeneralDefines As String = "GeneralDefines"
+        Private Const XmlGeneralMaxrecentprojectcount As String = "MaxRecentProjectCount"
+        Private Const XmlGeneralMaxrecentfilecount As String = "MaxRecentFileCount"
+        Private Const XmlRecentprojects As String = "RecentProjects"
+        Private Const XmlRecentproject As String = "RecentProject"
+        Private Const XmlRecentfiles As String = "RecentFiles"
+        Private Const XmlRecentfile As String = "RecentFile"
 
-        Private Const XML_FONTCOLOR_DEFINES As String = "FontColorDefines"
-        Private Const XML_FONTCOLOR_DEFINE As String = "FontColorDefine"
-        Private Const XML_FONTCOLOR_ID_ATRRIBUTE As String = "Id"
-        Private Const XML_FONTCOLOR_COLORR_ATRRIBUTE As String = "ColorR"
-        Private Const XML_FONTCOLOR_COLORG_ATRRIBUTE As String = "ColorG"
-        Private Const XML_FONTCOLOR_COLORB_ATRRIBUTE As String = "ColorB"
-        Private Const XML_FILEEXTENSION_DEFINES As String = "FileExtensionDefines"
-        Private Const XML_FILEEXTENSION_DEFINE As String = "FileExtensionDefine"
-        Private Const XML_FILEEXTENSION_EXTENSION_ATRRIBUTE As String = "FileExtension"
-        Private Const XML_FILEEXTENSION_ANALYZER_ATTRIBUTE As String = "AnalyzerName"
+        Private Const XmlFontcolorDefines As String = "FontColorDefines"
+        Private Const XmlFontcolorDefine As String = "FontColorDefine"
+        Private Const XmlFontcolorIdAtrribute As String = "Id"
+        Private Const XmlFontcolorColorrAtrribute As String = "ColorR"
+        Private Const XmlFontcolorColorgAtrribute As String = "ColorG"
+        Private Const XmlFontcolorColorbAtrribute As String = "ColorB"
+        Private Const XmlFileextensionDefines As String = "FileExtensionDefines"
+        Private Const XmlFileextensionDefine As String = "FileExtensionDefine"
+        Private Const XmlFileextensionExtensionAtrribute As String = "FileExtension"
+        Private Const XmlFileextensionAnalyzerAttribute As String = "AnalyzerName"
 
         Private _settingInfo As SettingInfo
         Private Shared _settingManager As SettingManagerSingleton
@@ -84,7 +84,7 @@ Namespace Managers
             End Get
         End Property
 
-        Public Sub LoadFromXML(ByVal xmlFileName As String)
+        Public Sub LoadFromXml(ByVal xmlFileName As String)
             Dim fontColorId As Integer
             Dim fontColorR As Integer
             Dim fontColorG As Integer
@@ -97,32 +97,32 @@ Namespace Managers
                 xmlDoc = New XmlDocument
                 xmlDoc.Load(xmlFileName)
 
-                _settingInfo.MaxRecentProjectCount = xmlDoc.SelectSingleNode(XML_RECENTPROJECTCOUNT_DEFINE_PATH).InnerText
-                _settingInfo.MaxRecentFileCount = xmlDoc.SelectSingleNode(XML_RECENTFILECOUNT_DEFINE_PATH).InnerText
+                _settingInfo.MaxRecentProjectCount = xmlDoc.SelectSingleNode(XmlRecentprojectcountDefinePath).InnerText
+                _settingInfo.MaxRecentFileCount = xmlDoc.SelectSingleNode(XmlRecentfilecountDefinePath).InnerText
 
                 _settingInfo.RecentProjects.Clear()
-                For Each recentProjectNode As XmlNode In xmlDoc.SelectNodes(XML_RECENTPROJECTS_PATH)
+                For Each recentProjectNode As XmlNode In xmlDoc.SelectNodes(XmlRecentprojectsPath)
                     _settingInfo.RecentProjects.Add(recentProjectNode.InnerText)
                 Next
 
                 _settingInfo.RecentFiles.Clear()
-                For Each recentFileNode As XmlNode In xmlDoc.SelectNodes(XML_RECENTFILES_PATH)
+                For Each recentFileNode As XmlNode In xmlDoc.SelectNodes(XmlRecentfilesPath)
                     _settingInfo.RecentFiles.Add(recentFileNode.InnerText)
                 Next
 
                 _settingInfo.FontColor.Clear()
-                For Each fontColorNode As XmlNode In xmlDoc.SelectNodes(XML_FONTCOLOR_DEFINE_PATH)
-                    fontColorId = fontColorNode.Attributes(XML_FONTCOLOR_ID_ATRRIBUTE).Value
-                    fontColorR = fontColorNode.Attributes(XML_FONTCOLOR_COLORR_ATRRIBUTE).Value
-                    fontColorG = fontColorNode.Attributes(XML_FONTCOLOR_COLORG_ATRRIBUTE).Value
-                    fontColorB = fontColorNode.Attributes(XML_FONTCOLOR_COLORB_ATRRIBUTE).Value
+                For Each fontColorNode As XmlNode In xmlDoc.SelectNodes(XmlFontcolorDefinePath)
+                    fontColorId = fontColorNode.Attributes(XmlFontcolorIdAtrribute).Value
+                    fontColorR = fontColorNode.Attributes(XmlFontcolorColorrAtrribute).Value
+                    fontColorG = fontColorNode.Attributes(XmlFontcolorColorgAtrribute).Value
+                    fontColorB = fontColorNode.Attributes(XmlFontcolorColorbAtrribute).Value
                     _settingInfo.FontColor.Add(fontColorId, Color.FromArgb(fontColorR, fontColorG, fontColorB))
                 Next
 
                 _settingInfo.FileExtension.Clear()
-                For Each fileExtensionNode As XmlNode In xmlDoc.SelectNodes(XML_FILEEXTENSION_DEFINE_PATH)
-                    extension = fileExtensionNode.Attributes(XML_FILEEXTENSION_EXTENSION_ATRRIBUTE).Value
-                    analyzer = fileExtensionNode.Attributes(XML_FILEEXTENSION_ANALYZER_ATTRIBUTE).Value
+                For Each fileExtensionNode As XmlNode In xmlDoc.SelectNodes(XmlFileextensionDefinePath)
+                    extension = fileExtensionNode.Attributes(XmlFileextensionExtensionAtrribute).Value
+                    analyzer = fileExtensionNode.Attributes(XmlFileextensionAnalyzerAttribute).Value
                     _settingInfo.FileExtension.Add(extension, analyzer)
                 Next
             Catch ex As Exception
@@ -137,7 +137,7 @@ Namespace Managers
             RefreshAllDocumentForm()
         End Sub
 
-        Public Sub SaveToXML(ByVal xmlFileName As String)
+        Public Sub SaveToXml(ByVal xmlFileName As String)
             Dim xmlWriteSettings As XmlWriterSettings
             Dim xmlWriter As XmlWriter
 
@@ -148,49 +148,49 @@ Namespace Managers
                 xmlWriteSettings.Indent = True
 
                 xmlWriter = Xml.XmlWriter.Create(xmlFileName, xmlWriteSettings)
-                xmlWriter.WriteStartElement(XML_ROOT_ELEMENT)
+                xmlWriter.WriteStartElement(XmlRootElement)
 
-                xmlWriter.WriteStartElement(XML_GENERAL_DEFINES)
-                xmlWriter.WriteStartElement(XML_GENERAL_MAXRECENTPROJECTCOUNT)
+                xmlWriter.WriteStartElement(XmlGeneralDefines)
+                xmlWriter.WriteStartElement(XmlGeneralMaxrecentprojectcount)
                 xmlWriter.WriteValue(SettingInfo.MaxRecentProjectCount)
                 xmlWriter.WriteEndElement()
-                xmlWriter.WriteStartElement(XML_GENERAL_MAXRECENTFILECOUNT)
+                xmlWriter.WriteStartElement(XmlGeneralMaxrecentfilecount)
                 xmlWriter.WriteValue(SettingInfo.MaxRecentFileCount)
                 xmlWriter.WriteEndElement()
                 xmlWriter.WriteFullEndElement()
 
-                xmlWriter.WriteStartElement(XML_RECENTPROJECTS)
+                xmlWriter.WriteStartElement(XmlRecentprojects)
                 For Each recentProject As String In SettingInfo.RecentProjects
-                    xmlWriter.WriteStartElement(XML_RECENTPROJECT)
+                    xmlWriter.WriteStartElement(XmlRecentproject)
                     xmlWriter.WriteValue(recentProject)
                     xmlWriter.WriteEndElement()
                 Next
                 xmlWriter.WriteEndElement()
 
-                xmlWriter.WriteStartElement(XML_RECENTFILES)
+                xmlWriter.WriteStartElement(XmlRecentfiles)
                 For Each recentFile As String In SettingInfo.RecentFiles
-                    xmlWriter.WriteStartElement(XML_RECENTFILE)
+                    xmlWriter.WriteStartElement(XmlRecentfile)
                     xmlWriter.WriteValue(recentFile)
                     xmlWriter.WriteEndElement()
                 Next
                 xmlWriter.WriteEndElement()
 
-                xmlWriter.WriteStartElement(XML_FONTCOLOR_DEFINES)
+                xmlWriter.WriteStartElement(XmlFontcolorDefines)
                 For Each wordType As Integer In SettingInfo.FontColor.Keys
-                    xmlWriter.WriteStartElement(XML_FONTCOLOR_DEFINE)
-                    xmlWriter.WriteAttributeString(XML_FONTCOLOR_ID_ATRRIBUTE, wordType.ToString)
-                    xmlWriter.WriteAttributeString(XML_FONTCOLOR_COLORR_ATRRIBUTE, SettingInfo.FontColor(wordType).R.ToString)
-                    xmlWriter.WriteAttributeString(XML_FONTCOLOR_COLORG_ATRRIBUTE, SettingInfo.FontColor(wordType).G.ToString)
-                    xmlWriter.WriteAttributeString(XML_FONTCOLOR_COLORB_ATRRIBUTE, SettingInfo.FontColor(wordType).B.ToString)
+                    xmlWriter.WriteStartElement(XmlFontcolorDefine)
+                    xmlWriter.WriteAttributeString(XmlFontcolorIdAtrribute, wordType.ToString)
+                    xmlWriter.WriteAttributeString(XmlFontcolorColorrAtrribute, SettingInfo.FontColor(wordType).R.ToString)
+                    xmlWriter.WriteAttributeString(XmlFontcolorColorgAtrribute, SettingInfo.FontColor(wordType).G.ToString)
+                    xmlWriter.WriteAttributeString(XmlFontcolorColorbAtrribute, SettingInfo.FontColor(wordType).B.ToString)
                     xmlWriter.WriteEndElement()
                 Next
                 xmlWriter.WriteFullEndElement()
 
-                xmlWriter.WriteStartElement(XML_FILEEXTENSION_DEFINES)
+                xmlWriter.WriteStartElement(XmlFileextensionDefines)
                 For Each extension As String In SettingInfo.FileExtension.Keys
-                    xmlWriter.WriteStartElement(XML_FILEEXTENSION_DEFINE)
-                    xmlWriter.WriteAttributeString(XML_FILEEXTENSION_EXTENSION_ATRRIBUTE, extension)
-                    xmlWriter.WriteAttributeString(XML_FILEEXTENSION_ANALYZER_ATTRIBUTE, SettingInfo.FileExtension(extension))
+                    xmlWriter.WriteStartElement(XmlFileextensionDefine)
+                    xmlWriter.WriteAttributeString(XmlFileextensionExtensionAtrribute, extension)
+                    xmlWriter.WriteAttributeString(XmlFileextensionAnalyzerAttribute, SettingInfo.FileExtension(extension))
                     xmlWriter.WriteEndElement()
                 Next
                 xmlWriter.WriteFullEndElement()

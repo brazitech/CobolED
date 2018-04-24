@@ -32,7 +32,7 @@ Public Class Message
     Private Shared MSG_EXCLAMATION As String = "E"
     Private Shared MSG_INFORMATION As String = "I"
     Private Shared MSG_QUESTION As String = "Q"
-    Private Shared MSG_TITLE As String = "Women Working with COBOL"
+    Private Shared MSG_TITLE As String = "CobolED"
     Private Shared MSG_SEPARATOR As String = "|"
 
     Public Shared Function ShowMessage(ByVal messageDefine As String, ByVal ParamArray accessoryMessage() As String) As MsgBoxResult

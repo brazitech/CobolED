@@ -36,15 +36,15 @@ Namespace Views
     Public Class ProjectView
         Implements INeedUpdateMember
 
-        Private Const IMG_PROGJECT As Integer = 0
-        Private Const IMG_PROGRAM As Integer = 1
-        Private Const IMG_FUNCTION As Integer = 2
-        Private Const IMG_VARIABLE As Integer = 3
-        Private Const IMG_INCLUDE As Integer = 4
-        Private Const IMG_GATHER As Integer = 5
-        Private Const TXT_GATHER_FUNCTION As String = "function"
-        Private Const TXT_GATHER_VARIABLE As String = "variable"
-        Private Const TXT_GATHER_INCLUDE As String = "Reference"
+        Private Const ImgProgject As Integer = 0
+        Private Const ImgProgram As Integer = 1
+        Private Const ImgFunction As Integer = 2
+        Private Const ImgVariable As Integer = 3
+        Private Const ImgInclude As Integer = 4
+        Private Const ImgGather As Integer = 5
+        Private Const TxtGatherFunction As String = "function"
+        Private Const TxtGatherVariable As String = "variable"
+        Private Const TxtGatherInclude As String = "Reference"
 
         Private Delegate Sub UpdateTreeNodeDelegate(ByVal programFileName As String, ByVal gatherNode As TreeNode)
         Private _updateInclude As UpdateTreeNodeDelegate
@@ -93,9 +93,9 @@ Namespace Views
                 If programNode.IsExpanded Then
                     programNode.Collapse()
                 End If
-                programNode.Nodes(TXT_GATHER_INCLUDE).Tag = _updateInclude
-                programNode.Nodes(TXT_GATHER_FUNCTION).Tag = _updateFunction
-                programNode.Nodes(TXT_GATHER_VARIABLE).Tag = _updateVariable
+                programNode.Nodes(TxtGatherInclude).Tag = _updateInclude
+                programNode.Nodes(TxtGatherFunction).Tag = _updateFunction
+                programNode.Nodes(TxtGatherVariable).Tag = _updateVariable
             Else
             End If
 
@@ -104,8 +104,8 @@ Namespace Views
         Private Sub SetProjectNode(ByVal projectInfo As ProjectInfo)
             Dim projectNode As TreeNode
             projectNode = _projectTreeView.Nodes.Add(projectInfo.ProjectName)
-            projectNode.ImageIndex = IMG_PROGJECT
-            projectNode.SelectedImageIndex = IMG_PROGJECT
+            projectNode.ImageIndex = ImgProgject
+            projectNode.SelectedImageIndex = ImgProgject
             projectNode.Tag = projectInfo
             projectNode.ContextMenuStrip = MenuManager.ProjectNodeContextMenu
 
@@ -119,16 +119,16 @@ Namespace Views
             Dim programNode As TreeNode
             Dim gatherNode As TreeNode
             programNode = projectNode.Nodes.Add(programInfo.ProgramName)
-            programNode.ImageIndex = IMG_PROGRAM
-            programNode.SelectedImageIndex = IMG_PROGRAM
+            programNode.ImageIndex = ImgProgram
+            programNode.SelectedImageIndex = ImgProgram
             programNode.Tag = programInfo
             programNode.ContextMenuStrip = MenuManager.ProgramNodeContextMenu
 
             'IncludeNode
-            gatherNode = programNode.Nodes.Add(TXT_GATHER_INCLUDE)
-            gatherNode.Name = TXT_GATHER_INCLUDE
-            gatherNode.ImageIndex = IMG_GATHER
-            gatherNode.SelectedImageIndex = IMG_GATHER
+            gatherNode = programNode.Nodes.Add(TxtGatherInclude)
+            gatherNode.Name = TxtGatherInclude
+            gatherNode.ImageIndex = ImgGather
+            gatherNode.SelectedImageIndex = ImgGather
             gatherNode.Tag = Nothing
 
             For Each includeInfo As IncludeInfo In MemberManager.GetIncludeInfoList(programInfo.ProgramFileName)
@@ -136,20 +136,20 @@ Namespace Views
             Next
 
             'FunctionNode
-            gatherNode = programNode.Nodes.Add(TXT_GATHER_FUNCTION)
-            gatherNode.Name = TXT_GATHER_FUNCTION
-            gatherNode.ImageIndex = IMG_GATHER
-            gatherNode.SelectedImageIndex = IMG_GATHER
+            gatherNode = programNode.Nodes.Add(TxtGatherFunction)
+            gatherNode.Name = TxtGatherFunction
+            gatherNode.ImageIndex = ImgGather
+            gatherNode.SelectedImageIndex = ImgGather
             gatherNode.Tag = Nothing
             For Each functionInfo As FunctionInfo In MemberManager.GetFunctionInfoList(programInfo.ProgramFileName)
                 AddFunctionNode(functionInfo, gatherNode)
             Next
 
             'VariableNode
-            gatherNode = programNode.Nodes.Add(TXT_GATHER_VARIABLE)
-            gatherNode.Name = TXT_GATHER_VARIABLE
-            gatherNode.ImageIndex = IMG_GATHER
-            gatherNode.SelectedImageIndex = IMG_GATHER
+            gatherNode = programNode.Nodes.Add(TxtGatherVariable)
+            gatherNode.Name = TxtGatherVariable
+            gatherNode.ImageIndex = ImgGather
+            gatherNode.SelectedImageIndex = ImgGather
             gatherNode.Tag = Nothing
             For Each variableInfo As VariableInfo In MemberManager.GetVariableInfoList(programInfo.ProgramFileName)
                 AddVariableNode(variableInfo, gatherNode)
@@ -161,8 +161,8 @@ Namespace Views
             Dim includeNode As TreeNode
 
             includeNode = gatherNode.Nodes.Add(includeInfo.IncludeName)
-            includeNode.ImageIndex = IMG_INCLUDE
-            includeNode.SelectedImageIndex = IMG_INCLUDE
+            includeNode.ImageIndex = ImgInclude
+            includeNode.SelectedImageIndex = ImgInclude
             includeNode.Tag = includeInfo
         End Sub
 
@@ -177,13 +177,13 @@ Namespace Views
             End If
             If parentFunctionNode IsNot Nothing Then
                 functionNode = parentFunctionNode.Nodes.Add(functionInfo.FunctionName)
-                functionNode.ImageIndex = IMG_FUNCTION
-                functionNode.SelectedImageIndex = IMG_FUNCTION
+                functionNode.ImageIndex = ImgFunction
+                functionNode.SelectedImageIndex = ImgFunction
                 functionNode.Tag = functionInfo
             Else
                 functionNode = gatherNode.Nodes.Add(functionInfo.FunctionName)
-                functionNode.ImageIndex = IMG_FUNCTION
-                functionNode.SelectedImageIndex = IMG_FUNCTION
+                functionNode.ImageIndex = ImgFunction
+                functionNode.SelectedImageIndex = ImgFunction
                 functionNode.Tag = functionInfo
             End If
         End Sub
@@ -200,13 +200,13 @@ Namespace Views
 
             If parentVariableNode IsNot Nothing Then
                 variableNode = parentVariableNode.Nodes.Add(variableInfo.VariableName)
-                variableNode.ImageIndex = IMG_VARIABLE
-                variableNode.SelectedImageIndex = IMG_VARIABLE
+                variableNode.ImageIndex = ImgVariable
+                variableNode.SelectedImageIndex = ImgVariable
                 variableNode.Tag = variableInfo
             Else
                 variableNode = gatherNode.Nodes.Add(variableInfo.VariableName)
-                variableNode.ImageIndex = IMG_VARIABLE
-                variableNode.SelectedImageIndex = IMG_VARIABLE
+                variableNode.ImageIndex = ImgVariable
+                variableNode.SelectedImageIndex = ImgVariable
                 variableNode.Tag = variableInfo
             End If
         End Sub

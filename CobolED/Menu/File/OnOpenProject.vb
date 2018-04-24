@@ -31,18 +31,18 @@ Namespace Menu.File
     Public Class OnOpenProject
         Inherits MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "Open CobolED Project"
+        Private Const StrComment As String = "Open CobolED Project"
 
         Private _openProjectDialog As MyOpenProjectDialog
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _openProjectDialog = New MyOpenProjectDialog
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

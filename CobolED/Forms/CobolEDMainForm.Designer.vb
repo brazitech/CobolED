@@ -1,6 +1,6 @@
 Namespace Forms
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-    Partial Class CobolEDMainForm
+    Partial Class CobolEdMainForm
         Inherits System.Windows.Forms.Form
 
         'Form will override the dispose to clean up the list of components .
@@ -1030,7 +1030,7 @@ Namespace Forms
             Me.IsMdiContainer = True
             Me.MainMenuStrip = Me._menu
             Me.Name = "CobolEDMainForm"
-            Me.Text = "Women Working with COBOL"
+            Me.Text = "CobolED"
             Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
             Me._statusBar.ResumeLayout(False)
             Me._statusBar.PerformLayout()

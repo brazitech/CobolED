@@ -31,17 +31,17 @@ Namespace Menu.Project
     Public Class OnAddExistingFile
         Inherits CobolED.Menu.MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "Add File to Project"
+        Private Const StrComment As String = "Add File to Project"
         Private _addExistingFileDialog As AddExistingFileDialog
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _addExistingFileDialog = New AddExistingFileDialog()
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

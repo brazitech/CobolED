@@ -28,10 +28,10 @@ Imports System.Xml
 Namespace Forms
     Public Class AboutForm
 
-        Private Const XML_ANALYZER_PATH As String = "CobolEDComponentDefines/CobolEDAnalyzerDefines/CobolEDAnalyzerDefine"
-        Private Const XML_EDITOR_PATH As String = "CobolEDComponentDefines/CobolEDEditorDefine"
-        Private Const XML_SEARCHENGINE_PATH As String = "CobolEDComponentDefines/CobolEDSearchEngineDefine"
-        Private Const XML_FILENAME_ATTRIBUTE As String = "FileName"
+        Private Const XmlAnalyzerPath As String = "CobolEDComponentDefines/CobolEDAnalyzerDefines/CobolEDAnalyzerDefine"
+        Private Const XmlEditorPath As String = "CobolEDComponentDefines/CobolEDEditorDefine"
+        Private Const XmlSearchenginePath As String = "CobolEDComponentDefines/CobolEDSearchEngineDefine"
+        Private Const XmlFilenameAttribute As String = "FileName"
 
         Private Sub AboutForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -57,16 +57,16 @@ Namespace Forms
                 xmlDoc = New XmlDocument
                 xmlDoc.Load(componentFileName)
 
-                For Each analyzerDefineNode As XmlNode In xmlDoc.SelectNodes(XML_ANALYZER_PATH)
-                    AddListViewItem(IO.Path.Combine(Application.StartupPath, analyzerDefineNode.Attributes(XML_FILENAME_ATTRIBUTE).Value))
+                For Each analyzerDefineNode As XmlNode In xmlDoc.SelectNodes(XmlAnalyzerPath)
+                    AddListViewItem(IO.Path.Combine(Application.StartupPath, analyzerDefineNode.Attributes(XmlFilenameAttribute).Value))
                 Next
 
-                For Each editorDefineNode As XmlNode In xmlDoc.SelectNodes(XML_EDITOR_PATH)
-                    AddListViewItem(IO.Path.Combine(Application.StartupPath, editorDefineNode.Attributes(XML_FILENAME_ATTRIBUTE).Value))
+                For Each editorDefineNode As XmlNode In xmlDoc.SelectNodes(XmlEditorPath)
+                    AddListViewItem(IO.Path.Combine(Application.StartupPath, editorDefineNode.Attributes(XmlFilenameAttribute).Value))
                 Next
 
-                For Each searchEngineDefineNode As XmlNode In xmlDoc.SelectNodes(XML_SEARCHENGINE_PATH)
-                    AddListViewItem(IO.Path.Combine(Application.StartupPath, searchEngineDefineNode.Attributes(XML_FILENAME_ATTRIBUTE).Value))
+                For Each searchEngineDefineNode As XmlNode In xmlDoc.SelectNodes(XmlSearchenginePath)
+                    AddListViewItem(IO.Path.Combine(Application.StartupPath, searchEngineDefineNode.Attributes(XmlFilenameAttribute).Value))
                 Next
 
             Catch ex As Exception

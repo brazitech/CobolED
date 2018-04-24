@@ -34,15 +34,15 @@ Namespace Menu.Search
     Public Class OnGoToDefine
         Inherits MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "Go to variable or function that you position at the cursor"
+        Private Const StrComment As String = "Go to variable or function that you position at the cursor"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 
@@ -61,8 +61,8 @@ Namespace Menu.Search
             Dim currentWord As WordInfo
             Dim currentPosition As Position
             Dim currentForm As DocumentForm
-            Dim cobolEDEditor As ICobolEDEditor
-            Dim cobolEDLex As ICobolEDLex
+            Dim cobolEdEditor As ICobolEDEditor
+            Dim cobolEdLex As ICobolEDLex
             Dim document As Document
             Dim functionInfo As FunctionInfo
             Dim variableInfo As VariableInfo

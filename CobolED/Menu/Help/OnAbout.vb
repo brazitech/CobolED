@@ -28,16 +28,16 @@ Namespace Menu.Help
         Inherits MenuItemProcessBase
 
         Private _aboutDialog As AboutForm
-        Private Const STR_COMMENT As String = "System information about the CobolED editor , version information, and the display of copyright information"
+        Private Const StrComment As String = "System information about the CobolED editor , version information, and the display of copyright information"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
             _aboutDialog = New AboutForm
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

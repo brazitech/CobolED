@@ -29,15 +29,15 @@ Namespace Menu.Edit
     Public Class OnCopy
         Inherits MenuItemProcessBase
 
-        Private Const STR_COMMENT As String = "Saved to the clipboard the choice to Copy"
+        Private Const StrComment As String = "Saved to the clipboard the choice to Copy"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm)
             MyBase.New(cobolEDMainForm)
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 

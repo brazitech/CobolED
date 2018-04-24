@@ -32,23 +32,23 @@ Namespace Menu.File
         Inherits MenuItemProcessBase
 
         Private _fileName As String
-        Private Const STR_COMMENT As String = "Open the specified File"
+        Private Const StrComment As String = "Open the specified File"
 
-        Public Sub New(ByVal cobolEDMainForm As CobolEDMainForm, ByVal projectName As String)
+        Public Sub New(ByVal cobolEdMainForm As CobolEDMainForm, ByVal projectName As String)
             MyBase.New(cobolEDMainForm)
             _fileName = projectName
         End Sub
 
         Public Overrides ReadOnly Property Comment() As String
             Get
-                Return STR_COMMENT
+                Return StrComment
             End Get
         End Property
 
         Public Overrides Sub Execute()
             Dim documentFileExtension As String
-            Dim cobolEDAnalyzerName As String
-            Dim cobolEDAnalyzer As ICobolEDAnalyzer
+            Dim cobolEdAnalyzerName As String
+            Dim cobolEdAnalyzer As ICobolEDAnalyzer
 
             If IO.File.Exists(_fileName) = True Then
                 If DocumentFormManager.DocumentForms(_fileName) IsNot Nothing Then
@@ -68,7 +68,7 @@ Namespace Menu.File
             End If
         End Sub
 
-        Private Sub OpenFile(ByVal fileName As String, ByVal cobolEDAnalyzer As ICobolEDAnalyzer)
+        Private Sub OpenFile(ByVal fileName As String, ByVal cobolEdAnalyzer As ICobolEDAnalyzer)
             DocumentManager.AddDocument(fileName)
             DocumentFormManager.AddDocumentForm(DocumentManager.Documents(fileName), cobolEDAnalyzer)
             DocumentFormManager.ActivateDocumentForm(fileName, FormWindowState.Maximized)
